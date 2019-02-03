@@ -45,6 +45,8 @@ fn foo(x: i32) -> impl Iterator<Item = i32> {
 }
 ```
 
+See [auto_enums](https://github.com/taiki-e/auto_enums) for how to automate patterns like this.
+
 ## Supported traits
 
 * [`Iterator`](https://doc.rust-lang.org/std/iter/trait.Iterator.html)
@@ -54,7 +56,7 @@ fn foo(x: i32) -> impl Iterator<Item = i32> {
 * [`TrustedLen`](https://doc.rust-lang.org/std/iter/trait.TrustedLen.html) (*requires `"trusted_len"` crate feature*)
 * [`Extend`](https://doc.rust-lang.org/std/iter/trait.Extend.html)
 
-See [taiki-e/auto_enums#11](https://github.com/taiki-e/auto_enums/issues/11) for other traits.
+See [auto_enums#11](https://github.com/taiki-e/auto_enums/issues/11) for other traits.
 
 ## License
 
