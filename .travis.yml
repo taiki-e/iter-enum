@@ -18,6 +18,8 @@ matrix:
       script:
         - cargo test
         - cargo test --release
+        - cargo test --no-default-features
+        - cargo test --no-default-features --release
         - cargo test --all-features
         - cargo test --all-features --release
 
@@ -50,6 +52,8 @@ before_script:
 script:
   - cargo test
   - cargo test --release
+  - cargo test --no-default-features
+  - cargo test --no-default-features --release
 
 notifications:
   email:
