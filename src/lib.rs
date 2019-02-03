@@ -15,13 +15,47 @@
 //!     B(B),
 //! }
 //!
-//! #[derive(Iterator, DoubleEndedIterator, ExactSizeIterator, FusedIterator, Extend)]
-//! enum Either3<A, B, C> {
-//!     A(A),
-//!     B(B),
-//!     C(C),
+//! fn foo(x: i32) -> impl Iterator<Item = i32> {
+//!     if x > 0 {
+//!         Either::A(x..=0)
+//!     } else {
+//!         Either::B(Some(x).into_iter())
+//!     }
 //! }
 //! ```
+//!
+//! ## Supported traits
+//!
+//! * [`Iterator`](https://doc.rust-lang.org/std/iter/trait.Iterator.html)
+//! * [`DoubleEndedIterator`](https://doc.rust-lang.org/std/iter/trait.DoubleEndedIterator.html)
+//! * [`ExactSizeIterator`](https://doc.rust-lang.org/std/iter/trait.ExactSizeIterator.html)
+//! * [`FusedIterator`](https://doc.rust-lang.org/std/iter/trait.FusedIterator.html)
+//! * [`TrustedLen`](https://doc.rust-lang.org/std/iter/trait.TrustedLen.html) (*requires `"trusted_len"` crate feature*)
+//! * [`Extend`](https://doc.rust-lang.org/std/iter/trait.Extend.html)
+//!
+//! See [taiki-e/auto_enums#11](https://github.com/taiki-e/auto_enums/issues/11) for other traits.
+//!
+//! ## Crate Features
+//!
+//! * `std`
+//!   * Enabled by default.
+//!   * Generate code for `std` library.
+//!   * Disable this feature to generate code for `no_std`.
+//!
+//! * `try_trait`
+//!   * Disabled by default.
+//!   * Make iterator implementation more effective.
+//!   * This requires Rust Nightly and you need to enable the unstable [`try_trait`](https://github.com/rust-lang/rust/issues/42327) feature gate.
+//!
+//! * `trusted_len`
+//!   * Disabled by default.
+//!   * Use `#[derive(TrustedLen)]`.
+//!   * This requires Rust Nightly and you need to enable the unstable [`trusted_len`](https://github.com/rust-lang/rust/issues/37572) feature gate.
+//!
+//! * `exact_size_is_empty`
+//!   * Disabled by default.
+//!   * Implements `ExactSizeIterator::is_empty`.
+//!   * This requires Rust Nightly and you need to enable the unstable [`exact_size_is_empty`](https://github.com/rust-lang/rust/issues/35428) feature gate.
 //!
 
 #![crate_type = "proc-macro"]

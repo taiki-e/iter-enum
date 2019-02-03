@@ -36,13 +36,25 @@ enum Either<A, B> {
     B(B),
 }
 
-#[derive(Iterator, DoubleEndedIterator, ExactSizeIterator, FusedIterator, Extend)]
-enum Either3<A, B, C> {
-    A(A),
-    B(B),
-    C(C),
+fn foo(x: i32) -> impl Iterator<Item = i32> {
+    if x > 0 {
+        Either::A(x..=0)
+    } else {
+        Either::B(Some(x).into_iter())
+    }
 }
 ```
+
+## Supported traits
+
+* [`Iterator`](https://doc.rust-lang.org/std/iter/trait.Iterator.html)
+* [`DoubleEndedIterator`](https://doc.rust-lang.org/std/iter/trait.DoubleEndedIterator.html)
+* [`ExactSizeIterator`](https://doc.rust-lang.org/std/iter/trait.ExactSizeIterator.html)
+* [`FusedIterator`](https://doc.rust-lang.org/std/iter/trait.FusedIterator.html)
+* [`TrustedLen`](https://doc.rust-lang.org/std/iter/trait.TrustedLen.html) (*requires `"trusted_len"` crate feature*)
+* [`Extend`](https://doc.rust-lang.org/std/iter/trait.Extend.html)
+
+See [taiki-e/auto_enums#11](https://github.com/taiki-e/auto_enums/issues/11) for other traits.
 
 ## License
 
