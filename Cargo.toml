@@ -1,0 +1,35 @@
+[package]
+name = "iterator-enum"
+# NB: When modifying, also modify html_root_url in lib.rs
+version = "0.1.0"
+authors = ["Taiki Endo <te316e89@gmail.com>"]
+license = "Apache-2.0/MIT"
+description = "#[derive(Iterator, DoubleEndedIterator, ExactSizeIterator, FusedIterator, Extend)] for enums."
+repository = "https://github.com/taiki-e/iterator-enum"
+documentation = "https://docs.rs/iterator-enum/"
+readme = "README.md"
+keywords = ["iterator", "derive", "enum"]
+categories = ["rust-patterns"]
+exclude = ["/.travis.yml"]
+
+[badges]
+travis-ci = { repository = "taiki-e/iterator-enum" }
+
+[lib]
+proc-macro = true
+
+[features]
+default = ["std"]
+# Use `std` library.
+std = []
+# Make iterator implementation more effective.
+try_trait = []
+# #[derive(TrustedLen)]
+trusted_len = []
+# Implements `ExactSizeIterator::is_empty`.
+exact_size_is_empty = []
+
+[dependencies]
+derive_utils = "0.6.2"
+quote = "^0.6.8"
+syn = { version = "^0.15.19", features = ["full"] }
