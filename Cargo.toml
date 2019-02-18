@@ -13,7 +13,8 @@ categories = ["rust-patterns"]
 exclude = ["/.travis.yml"]
 
 [badges]
-travis-ci = { repository = "taiki-e/iterator-enum" }
+# https://github.com/rust-lang/crates.io/issues/1392
+# travis-ci = { repository = "taiki-e/iterator-enum" }
 
 [lib]
 proc-macro = true
