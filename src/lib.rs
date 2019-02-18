@@ -63,7 +63,9 @@
 #![crate_type = "proc-macro"]
 #![recursion_limit = "256"]
 #![doc(html_root_url = "https://docs.rs/iterator-enum/0.1.2")]
+#![deny(unsafe_code)]
 #![deny(bare_trait_objects, elided_lifetimes_in_paths)]
+#![deny(unreachable_pub)]
 
 extern crate derive_utils;
 extern crate proc_macro;
