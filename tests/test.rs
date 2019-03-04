@@ -3,6 +3,8 @@
 #![cfg_attr(feature = "exact_size_is_empty", feature(exact_size_is_empty))]
 #![cfg_attr(not(feature = "std"), no_std)]
 #![deny(warnings)]
+#![deny(unsafe_code)]
+#![deny(bare_trait_objects, elided_lifetimes_in_paths)]
 #![allow(dead_code)]
 
 extern crate iterator_enum;

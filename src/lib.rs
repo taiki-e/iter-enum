@@ -64,8 +64,7 @@
 #![recursion_limit = "256"]
 #![doc(html_root_url = "https://docs.rs/iterator-enum/0.1.2")]
 #![deny(unsafe_code)]
-#![deny(bare_trait_objects, elided_lifetimes_in_paths)]
-#![deny(unreachable_pub)]
+#![deny(bare_trait_objects, elided_lifetimes_in_paths, unreachable_pub)]
 
 extern crate derive_utils;
 extern crate proc_macro;
