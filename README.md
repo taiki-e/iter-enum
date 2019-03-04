@@ -17,12 +17,6 @@ Add this to your `Cargo.toml`:
 iterator-enum = "0.1"
 ```
 
-Now, you can use iterator-enum:
-
-```rust
-use iterator_enum::*;
-```
-
 The current version of iterator-enum requires Rust 1.30 or later.
 
 ## Examples
@@ -56,7 +50,7 @@ See [auto_enums](https://github.com/taiki-e/auto_enums) for how to automate patt
 * [`TrustedLen`](https://doc.rust-lang.org/std/iter/trait.TrustedLen.html) (*requires `"trusted_len"` crate feature*)
 * [`Extend`](https://doc.rust-lang.org/std/iter/trait.Extend.html)
 
-See [auto_enums#11](https://github.com/taiki-e/auto_enums/issues/11) for other traits.
+See [this issue](https://github.com/taiki-e/auto_enums/issues/11) for other traits.
 
 ## License
 

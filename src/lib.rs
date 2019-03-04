@@ -35,7 +35,7 @@
 //! * [`TrustedLen`](https://doc.rust-lang.org/std/iter/trait.TrustedLen.html) (*requires `"trusted_len"` crate feature*)
 //! * [`Extend`](https://doc.rust-lang.org/std/iter/trait.Extend.html)
 //!
-//! See [auto_enums#11](https://github.com/taiki-e/auto_enums/issues/11) for other traits.
+//! See [this issue](https://github.com/taiki-e/auto_enums/issues/11) for other traits.
 //!
 //! ## Crate Features
 //!
