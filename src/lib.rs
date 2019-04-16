@@ -60,7 +60,6 @@
 //!   * This requires Rust Nightly and you need to enable the unstable [`exact_size_is_empty`](https://github.com/rust-lang/rust/issues/35428) feature gate.
 //!
 
-#![crate_type = "proc-macro"]
 #![recursion_limit = "256"]
 #![doc(html_root_url = "https://docs.rs/iterator-enum/0.1.2")]
 #![deny(unsafe_code)]
