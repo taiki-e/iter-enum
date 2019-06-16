@@ -2,37 +2,38 @@ language: rust
 sudo: false
 cache: cargo
 
+branches:
+  only:
+    - master
+    - staging
+    - trying
+
 matrix:
   fast_finish: true
 
   include:
     # This is the minimum Rust version supported by iterator-enum.
     # When updating this, the reminder to update the minimum required version in README.md.
-    - rust: 1.30.0
+    - rust: 1.31.0
 
     - rust: stable
     - rust: beta
     - rust: nightly
       script:
         - cargo test
-        - cargo test --no-default-features
         - cargo test --all-features
 
     - rust: nightly
-      name: cargo test (minimal versions)
+      name: cargo check (minimal versions)
       script:
         - cargo update -Zminimal-versions
-        - cargo test --all-features
+        - cargo check --all-features
 
     - rust: nightly
       name: cargo clippy
       script:
-        - if rustup component add clippy-preview;
-          then
-            cargo clippy --all-features -- -Dwarnings;
-          else
-            echo 'Skipping clippy';
-          fi
+        - rustup component add clippy || travis_terminate 0
+        - cargo clippy --all --all-features --tests
 
     - rust: stable
       name: cargo fmt
@@ -45,12 +46,14 @@ matrix:
       script:
         - RUSTDOCFLAGS=-Dwarnings cargo doc --no-deps --all-features
 
+env:
+  - RUSTFLAGS=-Dwarnings
+
 before_script:
   - set -o errexit
 
 script:
-  - cargo test
-  - cargo test --no-default-features
+  - cargo check
 
 notifications:
   email:

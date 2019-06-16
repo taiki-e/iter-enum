@@ -4,7 +4,7 @@
 [![version](https://img.shields.io/crates/v/iterator-enum.svg)](https://crates.io/crates/iterator-enum/)
 [![documentation](https://docs.rs/iterator-enum/badge.svg)](https://docs.rs/iterator-enum/)
 [![license](https://img.shields.io/crates/l/iterator-enum.svg)](https://crates.io/crates/iterator-enum/)
-[![Rustc Version](https://img.shields.io/badge/rustc-1.30+-lightgray.svg)](https://blog.rust-lang.org/2018/10/25/Rust-1.30.0.html)
+[![Rustc Version](https://img.shields.io/badge/rustc-1.31+-lightgray.svg)](https://blog.rust-lang.org/2018/12/06/Rust-1.31-and-rust-2018.html)
 
 \#\[derive(Iterator, DoubleEndedIterator, ExactSizeIterator, FusedIterator, Extend)\] for enums.
 
@@ -17,7 +17,7 @@ Add this to your `Cargo.toml`:
 iterator-enum = "0.1"
 ```
 
-The current version of iterator-enum requires Rust 1.30 or later.
+The current iterator-enum requires Rust 1.31 or later.
 
 ## Examples
 
@@ -49,8 +49,6 @@ See [auto_enums](https://github.com/taiki-e/auto_enums) for how to automate patt
 * [`FusedIterator`](https://doc.rust-lang.org/std/iter/trait.FusedIterator.html)
 * [`TrustedLen`](https://doc.rust-lang.org/std/iter/trait.TrustedLen.html) (*requires `"trusted_len"` crate feature*)
 * [`Extend`](https://doc.rust-lang.org/std/iter/trait.Extend.html)
-
-See [this issue](https://github.com/taiki-e/auto_enums/issues/11) for other traits.
 
 ## License
 
