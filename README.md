@@ -14,7 +14,7 @@ Add this to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-iterator-enum = "0.1"
+iterator-enum = "0.2"
 ```
 
 The current iterator-enum requires Rust 1.31 or later.

@@ -1,5 +1,7 @@
 # Unreleased
 
+# 0.2.0 - 2019-06-16
+
 * Transition to Rust 2018. With this change, the minimum required version will go up to Rust 1.31.
 
 * Removed `"std"` crate feature. This crate can generate accurate code without `"std"` feature.
