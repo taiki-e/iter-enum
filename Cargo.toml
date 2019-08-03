@@ -11,11 +11,6 @@ documentation = "https://docs.rs/iterator-enum/"
 readme = "README.md"
 keywords = ["iterator", "derive", "enum"]
 categories = ["rust-patterns"]
-exclude = ["/.travis.yml", "/bors.toml"]
-
-[badges]
-# https://github.com/rust-lang/crates.io/issues/1392
-# travis-ci = { repository = "taiki-e/iterator-enum" }
 
 [lib]
 proc-macro = true
