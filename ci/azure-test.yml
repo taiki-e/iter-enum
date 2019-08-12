@@ -26,11 +26,11 @@ jobs:
       displayName: cargo ${{ parameters.cmd }}
 
     - ${{ if eq(parameters.rust, 'nightly') }}:
-      - script: cargo ${{ parameters.cmd }} --all-features
+      - script: |
+          cargo ${{ parameters.cmd }} --all-features
         displayName: cargo ${{ parameters.cmd }} --all-features
 
       - script: |
           cargo update -Zminimal-versions
-          cat Cargo.lock
           cargo check --all-features
         displayName: cargo check -Zminimal-versions
