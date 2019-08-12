@@ -1,22 +1,20 @@
 [package]
 name = "iterator-enum"
-# NB: When modifying, also modify html_root_url in lib.rs
 version = "0.2.0"
 authors = ["Taiki Endo <te316e89@gmail.com>"]
 edition = "2018"
 license = "Apache-2.0/MIT"
-description = "#[derive(Iterator, DoubleEndedIterator, ExactSizeIterator, FusedIterator, Extend)] for enums."
 repository = "https://github.com/taiki-e/iterator-enum"
 documentation = "https://docs.rs/iterator-enum/"
 readme = "README.md"
 keywords = ["iterator", "derive", "enum"]
 categories = ["rust-patterns"]
+description = "#[derive(Iterator, DoubleEndedIterator, ExactSizeIterator, FusedIterator, Extend)] for enums."
 
 [lib]
 proc-macro = true
 
 [features]
-default = []
 # Make iterator implementation more effective.
 try_trait = []
 # #[derive(TrustedLen)]
