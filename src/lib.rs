@@ -73,7 +73,7 @@ fn ident<S: AsRef<str>>(s: S) -> Ident {
 
 macro_rules! parse {
     ($input:expr) => {
-        match syn::parse($input).and_then(|item| Data::from_derive(&item)) {
+        match syn::parse($input).and_then(|item: syn::DeriveInput| Data::new(&item)) {
             Ok(data) => data,
             Err(err) => return TokenStream::from(err.to_compile_error()),
         }

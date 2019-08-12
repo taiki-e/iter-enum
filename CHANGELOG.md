@@ -2,6 +2,8 @@
 
 * Added generated code examples.
 
+* Updated minimum `derive_utils` version to 0.8.0. This improves the error message.
+
 # 0.2.0 - 2019-06-16
 
 * Transition to Rust 2018. With this change, the minimum required version will go up to Rust 1.31.
