@@ -2,7 +2,9 @@
 
 * Added generated code examples.
 
-* Updated minimum `derive_utils` version to 0.8.0. This improves the error message.
+* Updated `syn` and `quote` to 1.0.
+
+* Updated `derive_utils` to 0.9.
 
 # 0.2.0 - 2019-06-16
 

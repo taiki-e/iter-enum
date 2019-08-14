@@ -63,17 +63,12 @@ extern crate proc_macro;
 
 use derive_utils::{derive_trait, EnumData as Data};
 use proc_macro::TokenStream;
-use proc_macro2::Span;
-use quote::quote;
-use syn::{parse_quote, Ident};
-
-fn ident<S: AsRef<str>>(s: S) -> Ident {
-    Ident::new(s.as_ref(), Span::call_site())
-}
+use quote::{format_ident, quote};
+use syn::parse_quote;
 
 macro_rules! parse {
     ($input:expr) => {
-        match syn::parse($input).and_then(|item: syn::DeriveInput| Data::new(&item)) {
+        match syn::parse($input).and_then(|item: syn::ItemEnum| Data::new(&item)) {
             Ok(data) => data,
             Err(err) => return TokenStream::from(err.to_compile_error()),
         }
@@ -176,7 +171,7 @@ pub fn derive_double_ended_iterator(input: TokenStream) -> TokenStream {
 
     derive_trait!(
         parse!(input),
-        Some(ident("Item")),
+        Some(format_ident!("Item")),
         parse_quote!(::core::iter::DoubleEndedIterator),
         parse_quote! {
             trait DoubleEndedIterator: ::core::iter::Iterator {
@@ -202,7 +197,7 @@ pub fn derive_exact_size_iterator(input: TokenStream) -> TokenStream {
 
     derive_trait!(
         parse!(input),
-        Some(ident("Item")),
+        Some(format_ident!("Item")),
         parse_quote!(::core::iter::ExactSizeIterator),
         parse_quote! {
             trait ExactSizeIterator: ::core::iter::Iterator {
@@ -220,7 +215,7 @@ pub fn derive_exact_size_iterator(input: TokenStream) -> TokenStream {
 pub fn derive_fused_iterator(input: TokenStream) -> TokenStream {
     derive_trait!(
         parse!(input),
-        Some(ident("Item")),
+        Some(format_ident!("Item")),
         parse_quote!(::core::iter::FusedIterator),
         parse_quote! {
             trait FusedIterator: ::core::iter::Iterator {}
@@ -235,7 +230,7 @@ pub fn derive_fused_iterator(input: TokenStream) -> TokenStream {
 pub fn derive_trusted_len(input: TokenStream) -> TokenStream {
     derive_trait!(
         parse!(input),
-        Some(ident("Item")),
+        Some(format_ident!("Item")),
         parse_quote!(::core::iter::TrustedLen),
         parse_quote! {
             unsafe trait TrustedLen: ::core::iter::Iterator {}
