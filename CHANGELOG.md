@@ -1,5 +1,7 @@
 # Unreleased
 
+# 0.2.1 - 2019-08-15
+
 * Added support for `rayon::iter::{ParallelIterator, IndexedParallelIterator, ParallelExtend}`. These are disabled by default and can be used by enabling `"rayon"` crate feature.
 
 * Added generated code examples.
