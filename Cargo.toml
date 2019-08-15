@@ -22,7 +22,12 @@ trusted_len = []
 # Implements `ExactSizeIterator::is_empty`.
 exact_size_is_empty = []
 
+rayon = []
+
 [dependencies]
 derive_utils = "0.9"
 quote = "1.0"
 syn = { version = "1.0", features = ["full"] }
+
+[dev-dependencies]
+rayon_crate = { version = "1.1", package = "rayon" }

@@ -1,5 +1,7 @@
 # Unreleased
 
+* Added support for `rayon::iter::{ParallelIterator, IndexedParallelIterator, ParallelExtend}`. These are disabled by default and can be used by enabling `"rayon"` crate feature.
+
 * Added generated code examples.
 
 * Updated `syn` and `quote` to 1.0.

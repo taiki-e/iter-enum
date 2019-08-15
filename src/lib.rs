@@ -26,12 +26,12 @@
 //!
 //! ## Supported traits
 //!
-//! * [`Iterator`](https://doc.rust-lang.org/std/iter/trait.Iterator.html) - [generated code](https://github.com/taiki-e/iterator-enum/blob/master/doc/iterator.md)
-//! * [`DoubleEndedIterator`](https://doc.rust-lang.org/std/iter/trait.DoubleEndedIterator.html) - [generated code](https://github.com/taiki-e/iterator-enum/blob/master/doc/double_ended_iterator.md)
-//! * [`ExactSizeIterator`](https://doc.rust-lang.org/std/iter/trait.ExactSizeIterator.html) - [generated code](https://github.com/taiki-e/iterator-enum/blob/master/doc/exact_size_iterator.md)
-//! * [`FusedIterator`](https://doc.rust-lang.org/std/iter/trait.FusedIterator.html) - [generated code](https://github.com/taiki-e/iterator-enum/blob/master/doc/fused_iterator.md)
-//! * [`TrustedLen`](https://doc.rust-lang.org/std/iter/trait.TrustedLen.html) - [generated code](https://github.com/taiki-e/iterator-enum/blob/master/doc/trusted_len.md) (*requires `"trusted_len"` crate feature*)
-//! * [`Extend`](https://doc.rust-lang.org/std/iter/trait.Extend.html) - [generated code](https://github.com/taiki-e/iterator-enum/blob/master/doc/extend.md)
+//! * [`Iterator`](https://doc.rust-lang.org/std/iter/trait.Iterator.html) - [generated code](https://github.com/taiki-e/iterator-enum/blob/master/doc/Iterator.md)
+//! * [`DoubleEndedIterator`](https://doc.rust-lang.org/std/iter/trait.DoubleEndedIterator.html) - [generated code](https://github.com/taiki-e/iterator-enum/blob/master/doc/DoubleEndedIterator.md)
+//! * [`ExactSizeIterator`](https://doc.rust-lang.org/std/iter/trait.ExactSizeIterator.html) - [generated code](https://github.com/taiki-e/iterator-enum/blob/master/doc/ExactSizeIterator.md)
+//! * [`FusedIterator`](https://doc.rust-lang.org/std/iter/trait.FusedIterator.html) - [generated code](https://github.com/taiki-e/iterator-enum/blob/master/doc/FusedIterator.md)
+//! * [`TrustedLen`](https://doc.rust-lang.org/std/iter/trait.TrustedLen.html) - [generated code](https://github.com/taiki-e/iterator-enum/blob/master/doc/TrustedLen.md) (*requires `"trusted_len"` crate feature*)
+//! * [`Extend`](https://doc.rust-lang.org/std/iter/trait.Extend.html) - [generated code](https://github.com/taiki-e/iterator-enum/blob/master/doc/Extend.md)
 //!
 //! ## Crate Features
 //!
@@ -249,6 +249,73 @@ pub fn derive_extend(input: TokenStream) -> TokenStream {
             trait Extend<__A> {
                 #[inline]
                 fn extend<__T: ::core::iter::IntoIterator<Item = __A>>(&mut self, iter: __T);
+            }
+        },
+    )
+    .unwrap_or_else(|e| e.to_compile_error())
+    .into()
+}
+
+#[cfg(feature = "rayon")]
+#[proc_macro_derive(ParallelIterator)]
+pub fn derive_parallel_iterator(input: TokenStream) -> TokenStream {
+    derive_trait!(
+        parse!(input),
+        parse_quote!(::rayon::iter::ParallelIterator),
+        parse_quote! {
+            trait ParallelIterator {
+                type Item;
+                #[inline]
+                fn drive_unindexed<__C>(self, consumer: __C) -> __C::Result
+                where
+                    __C: ::rayon::iter::plumbing::UnindexedConsumer<Self::Item>;
+                #[inline]
+                fn opt_len(&self) -> ::core::option::Option<usize>;
+            }
+        },
+    )
+    .unwrap_or_else(|e| e.to_compile_error())
+    .into()
+}
+
+#[cfg(feature = "rayon")]
+#[proc_macro_derive(IndexedParallelIterator)]
+pub fn derive_indexed_parallel_iterator(input: TokenStream) -> TokenStream {
+    derive_trait!(
+        parse!(input),
+        Some(format_ident!("Item")),
+        parse_quote!(::rayon::iter::IndexedParallelIterator),
+        parse_quote! {
+            trait IndexedParallelIterator: ::rayon::iter::ParallelIterator {
+                #[inline]
+                fn drive<__C>(self, consumer: __C) -> __C::Result
+                where
+                    __C: ::rayon::iter::plumbing::Consumer<Self::Item>;
+                #[inline]
+                fn len(&self) -> usize;
+                #[inline]
+                fn with_producer<__CB>(self, callback: __CB) -> __CB::Output
+                where
+                    __CB: ::rayon::iter::plumbing::ProducerCallback<Self::Item>;
+            }
+        },
+    )
+    .unwrap_or_else(|e| e.to_compile_error())
+    .into()
+}
+
+#[cfg(feature = "rayon")]
+#[proc_macro_derive(ParallelExtend)]
+pub fn derive_parallel_extend(input: TokenStream) -> TokenStream {
+    derive_trait!(
+        parse!(input),
+        parse_quote!(::rayon::iter::ParallelExtend),
+        parse_quote! {
+            trait ParallelExtend<__T: Send> {
+                #[inline]
+                fn par_extend<__I>(&mut self, par_iter: __I)
+                where
+                    __I: ::rayon::iter::IntoParallelIterator<Item = __T>;
             }
         },
     )
