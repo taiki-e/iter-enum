@@ -6,10 +6,12 @@ edition = "2018"
 license = "Apache-2.0/MIT"
 repository = "https://github.com/taiki-e/iterator-enum"
 documentation = "https://docs.rs/iterator-enum/"
-readme = "README.md"
 keywords = ["iterator", "derive", "enum"]
 categories = ["rust-patterns"]
-description = "#[derive(Iterator, DoubleEndedIterator, ExactSizeIterator, FusedIterator, Extend)] for enums."
+readme = "README.md"
+description = """
+#[derive(Iterator, DoubleEndedIterator, ExactSizeIterator, FusedIterator, Extend)] for enums.
+"""
 
 [lib]
 proc-macro = true
