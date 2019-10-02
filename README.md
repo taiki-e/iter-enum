@@ -1,13 +1,10 @@
 # iterator-enum
 
-[![Build Status][azure-badge]][azure-url]
 [![Crates.io][crates-version-badge]][crates-url]
 [![Docs.rs][docs-badge]][docs-url]
 [![License][crates-license-badge]][crates-url]
 [![Minimum supported Rust version][rustc-badge]][rustc-url]
 
-[azure-badge]: https://dev.azure.com/taiki-e/taiki-e/_apis/build/status/taiki-e.iterator-enum?branchName=master
-[azure-url]: https://dev.azure.com/taiki-e/taiki-e/_build/latest?definitionId=9&branchName=master
 [crates-version-badge]: https://img.shields.io/crates/v/iterator-enum.svg
 [crates-license-badge]: https://img.shields.io/crates/l/iterator-enum.svg
 [crates-badge]: https://img.shields.io/crates/v/iterator-enum.svg
