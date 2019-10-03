@@ -10,11 +10,12 @@ on:
 
 jobs:
   test:
+    name: test
     runs-on: ubuntu-latest
     env:
       RUSTFLAGS: -Dwarnings
     strategy:
-      fail-fast: true
+      fail-fast: false
       matrix:
         rust:
           # This is the minimum Rust version supported by iterator-enum.
@@ -52,6 +53,7 @@ jobs:
           cargo check --all-features
 
   style:
+    name: style
     runs-on: ubuntu-latest
     env:
       RUSTFLAGS: -Dwarnings
