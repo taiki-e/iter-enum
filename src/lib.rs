@@ -14,11 +14,7 @@
 //! }
 //!
 //! fn foo(x: i32) -> impl Iterator<Item = i32> {
-//!     if x > 0 {
-//!         Either::A(x..=0)
-//!     } else {
-//!         Either::B(Some(x).into_iter())
-//!     }
+//!     if x > 0 { Either::A(0..=x) } else { Either::B(std::iter::empty()) }
 //! }
 //! ```
 //!
@@ -49,7 +45,6 @@
 //!   * Disabled by default.
 //!   * Implements `ExactSizeIterator::is_empty`.
 //!   * This requires Rust Nightly and you need to enable the unstable [`exact_size_is_empty`](https://github.com/rust-lang/rust/issues/35428) feature gate.
-//!
 
 #![recursion_limit = "256"]
 #![doc(html_root_url = "https://docs.rs/iterator-enum/0.2.1")]
