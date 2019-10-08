@@ -1,8 +1,12 @@
 # Unreleased
 
+* [Removed unstable `"exact_size_is_empty"` and `"try_trait"` features.][7]
+
+[7]: https://github.com/taiki-e/iterator-enum/pull/7
+
 # 0.2.1 - 2019-08-15
 
-* Added support for `rayon::iter::{ParallelIterator, IndexedParallelIterator, ParallelExtend}`. These are disabled by default and can be used by enabling `"rayon"` crate feature.
+* Added support for `rayon::iter::{ParallelIterator, IndexedParallelIterator, ParallelExtend}`. These are disabled by default and can be used by enabling `"rayon"` feature.
 
 * Added generated code examples.
 
@@ -14,7 +18,7 @@
 
 * Transition to Rust 2018. With this change, the minimum required version will go up to Rust 1.31.
 
-* Removed `"std"` crate feature. This crate can generate accurate code without `"std"` feature.
+* Removed `"std"` feature. This crate can generate accurate code without `"std"` feature.
 
 * Updated minimum `derive_utils` version to 0.7.2.
 

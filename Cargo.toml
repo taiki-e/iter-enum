@@ -10,20 +10,17 @@ keywords = ["iterator", "derive", "enum"]
 categories = ["rust-patterns"]
 readme = "README.md"
 description = """
-#[derive(Iterator, DoubleEndedIterator, ExactSizeIterator, FusedIterator, Extend)] for enums.
+#[derive(Iterator, DoubleEndedIterator, ExactSizeIterator, Extend)] for enums.
 """
 
 [lib]
 proc-macro = true
 
 [features]
-# Make iterator implementation more effective.
-try_trait = []
 # #[derive(TrustedLen)]
 trusted_len = []
-# Implements `ExactSizeIterator::is_empty`.
-exact_size_is_empty = []
 
+# #[derive(ParallelIterator, IndexedParallelIterator, ParallelExtend)]
 rayon = []
 
 [dependencies]
@@ -32,4 +29,4 @@ quote = "1.0"
 syn = { version = "1.0", features = ["full"] }
 
 [dev-dependencies]
-rayon_crate = { version = "1.1", package = "rayon" }
+rayon_crate = { version = "1.2", package = "rayon" }
