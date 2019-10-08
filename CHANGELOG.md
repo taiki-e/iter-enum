@@ -1,5 +1,7 @@
 # Unreleased
 
+# 0.2.2 - 2019-10-08
+
 * [Removed unstable `"exact_size_is_empty"` and `"try_trait"` features.][7]
 
 [7]: https://github.com/taiki-e/iterator-enum/pull/7
