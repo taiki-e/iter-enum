@@ -3,8 +3,6 @@
 //! ## Examples
 //!
 //! ```rust
-//! # #![cfg_attr(feature = "try_trait", feature(try_trait))]
-//! # #![cfg_attr(feature = "exact_size_is_empty", feature(exact_size_is_empty))]
 //! use iterator_enum::*;
 //!
 //! #[derive(Iterator, DoubleEndedIterator, ExactSizeIterator, FusedIterator, Extend)]
@@ -18,33 +16,30 @@
 //! }
 //! ```
 //!
-//! See [auto_enums](https://github.com/taiki-e/auto_enums) for how to automate patterns like this.
+//! See [auto_enums](https://github.com/taiki-e/auto_enums) crate for how to automate patterns like this.
 //!
 //! ## Supported traits
 //!
-//! * [`Iterator`](https://doc.rust-lang.org/std/iter/trait.Iterator.html) - [generated code](https://github.com/taiki-e/iterator-enum/blob/master/doc/Iterator.md)
-//! * [`DoubleEndedIterator`](https://doc.rust-lang.org/std/iter/trait.DoubleEndedIterator.html) - [generated code](https://github.com/taiki-e/iterator-enum/blob/master/doc/DoubleEndedIterator.md)
-//! * [`ExactSizeIterator`](https://doc.rust-lang.org/std/iter/trait.ExactSizeIterator.html) - [generated code](https://github.com/taiki-e/iterator-enum/blob/master/doc/ExactSizeIterator.md)
-//! * [`FusedIterator`](https://doc.rust-lang.org/std/iter/trait.FusedIterator.html) - [generated code](https://github.com/taiki-e/iterator-enum/blob/master/doc/FusedIterator.md)
-//! * [`TrustedLen`](https://doc.rust-lang.org/std/iter/trait.TrustedLen.html) - [generated code](https://github.com/taiki-e/iterator-enum/blob/master/doc/TrustedLen.md) (*requires `"trusted_len"` crate feature*)
-//! * [`Extend`](https://doc.rust-lang.org/std/iter/trait.Extend.html) - [generated code](https://github.com/taiki-e/iterator-enum/blob/master/doc/Extend.md)
+//! * [`Iterator`](https://doc.rust-lang.org/std/iter/trait.Iterator.html) - [generated code](https://github.com/taiki-e/iterator-enum/blob/master/doc/iterator.md)
+//! * [`DoubleEndedIterator`](https://doc.rust-lang.org/std/iter/trait.DoubleEndedIterator.html) - [generated code](https://github.com/taiki-e/iterator-enum/blob/master/doc/double_ended_iterator.md)
+//! * [`ExactSizeIterator`](https://doc.rust-lang.org/std/iter/trait.ExactSizeIterator.html) - [generated code](https://github.com/taiki-e/iterator-enum/blob/master/doc/exact_size_iterator.md)
+//! * [`FusedIterator`](https://doc.rust-lang.org/std/iter/trait.FusedIterator.html) - [generated code](https://github.com/taiki-e/iterator-enum/blob/master/doc/fused_iterator.md)
+//! * [`Extend`](https://doc.rust-lang.org/std/iter/trait.Extend.html) - [generated code](https://github.com/taiki-e/iterator-enum/blob/master/doc/extend.md)
+//! * [`TrustedLen`](https://doc.rust-lang.org/std/iter/trait.TrustedLen.html) - [generated code](https://github.com/taiki-e/iterator-enum/blob/master/doc/trusted_len.md) (*requires `"trusted_len"` feature*)
+//! * [`ParallelIterator`](https://docs.rs/rayon/1/rayon/iter/trait.ParallelIterator.html) - [generated code](https://github.com/taiki-e/iterator-enum/blob/master/doc/parallel_iterator.md) (*requires `"rayon"` feature*)
+//! * [`IndexedParallelIterator`](https://docs.rs/rayon/1/rayon/iter/trait.IndexedParallelIterator.html) - [generated code](https://github.com/taiki-e/iterator-enum/blob/master/doc/indexed_parallel_iterator.md) (*requires `"rayon"` feature*)
+//! * [`ParallelExtend`](https://docs.rs/rayon/1/rayon/iter/trait.ParallelExtend.html) - [generated code](https://github.com/taiki-e/iterator-enum/blob/master/doc/parallel_extend.md) (*requires `"rayon"` feature*)
 //!
-//! ## Crate Features
+//! ## Optional features
 //!
-//! * `try_trait`
+//! * `rayon`
 //!   * Disabled by default.
-//!   * Make iterator implementation more effective.
-//!   * This requires Rust Nightly and you need to enable the unstable [`try_trait`](https://github.com/rust-lang/rust/issues/42327) feature gate.
+//!   * Enable to use `#[derive(ParallelIterator, IndexedParallelIterator, ParallelExtend)]`.
 //!
 //! * `trusted_len`
 //!   * Disabled by default.
-//!   * Use `#[derive(TrustedLen)]`.
+//!   * Enable to use `#[derive(TrustedLen)]`.
 //!   * This requires Rust Nightly and you need to enable the unstable [`trusted_len`](https://github.com/rust-lang/rust/issues/37572) feature gate.
-//!
-//! * `exact_size_is_empty`
-//!   * Disabled by default.
-//!   * Implements `ExactSizeIterator::is_empty`.
-//!   * This requires Rust Nightly and you need to enable the unstable [`exact_size_is_empty`](https://github.com/rust-lang/rust/issues/35428) feature gate.
 
 #![recursion_limit = "256"]
 #![doc(html_root_url = "https://docs.rs/iterator-enum/0.2.1")]
@@ -74,16 +69,9 @@ macro_rules! parse {
 
 #[proc_macro_derive(Iterator)]
 pub fn derive_iterator(input: TokenStream) -> TokenStream {
-    #[cfg(feature = "try_trait")]
-    let try_trait = quote! {
-        #[inline]
-        fn try_fold<__U, __F, __R>(&mut self, init: __U, f: __F) -> __R
-        where
-            __F: ::core::ops::FnMut(__U, Self::Item) -> __R,
-            __R: ::core::ops::Try<Ok = __U>;
-    };
+    // TODO: When `try_trait` stabilized, add `try_fold` and remove `fold`, `find` etc. conditionally.
+
     // It is equally efficient if `try_fold` can be used.
-    #[cfg(not(feature = "try_trait"))]
     let try_trait = quote! {
         #[inline]
         fn fold<__U, __F>(self, init: __U, f: __F) -> __U
@@ -145,16 +133,9 @@ pub fn derive_iterator(input: TokenStream) -> TokenStream {
 
 #[proc_macro_derive(DoubleEndedIterator)]
 pub fn derive_double_ended_iterator(input: TokenStream) -> TokenStream {
-    #[cfg(feature = "try_trait")]
-    let try_trait = quote! {
-        #[inline]
-        fn try_rfold<__U, __F, __R>(&mut self, init: __U, f: __F) -> __R
-        where
-            __F: ::core::ops::FnMut(__U, Self::Item) -> __R,
-            __R: ::core::ops::Try<Ok = __U>;
-    };
+    // TODO: When `try_trait` stabilized, add `try_rfold` and remove `rfold` and `rfind` conditionally.
+
     // It is equally efficient if `try_rfold` can be used.
-    #[cfg(not(feature = "try_trait"))]
     let try_trait = quote! {
         #[inline]
         fn rfold<__U, __F>(self, accum: __U, f: __F) -> __U
@@ -184,13 +165,7 @@ pub fn derive_double_ended_iterator(input: TokenStream) -> TokenStream {
 
 #[proc_macro_derive(ExactSizeIterator)]
 pub fn derive_exact_size_iterator(input: TokenStream) -> TokenStream {
-    #[cfg(not(feature = "exact_size_is_empty"))]
-    let is_empty = quote!();
-    #[cfg(feature = "exact_size_is_empty")]
-    let is_empty = quote! {
-        #[inline]
-        fn is_empty(&self) -> bool;
-    };
+    // TODO: When `exact_size_is_empty` stabilized, add `is_empty` conditionally.
 
     derive_trait!(
         parse!(input),
@@ -200,7 +175,6 @@ pub fn derive_exact_size_iterator(input: TokenStream) -> TokenStream {
             trait ExactSizeIterator: ::core::iter::Iterator {
                 #[inline]
                 fn len(&self) -> usize;
-                #is_empty
             }
         },
     )

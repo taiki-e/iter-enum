@@ -1,7 +1,5 @@
 #![no_std]
-#![cfg_attr(feature = "try_trait", feature(try_trait))]
 #![cfg_attr(feature = "trusted_len", feature(trusted_len))]
-#![cfg_attr(feature = "exact_size_is_empty", feature(exact_size_is_empty))]
 #![warn(unsafe_code)]
 #![warn(rust_2018_idioms)]
 #![allow(dead_code)]
