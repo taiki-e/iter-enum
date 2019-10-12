@@ -19,14 +19,13 @@ proc-macro = true
 [features]
 # #[derive(TrustedLen)]
 trusted_len = []
-
 # #[derive(ParallelIterator, IndexedParallelIterator, ParallelExtend)]
 rayon = []
 
 [dependencies]
 derive_utils = "0.9"
 quote = "1.0"
-syn = { version = "1.0", features = ["full"] }
+syn = "1.0"
 
 [dev-dependencies]
 rayon_crate = { version = "1.2", package = "rayon" }

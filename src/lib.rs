@@ -60,9 +60,9 @@ use syn::parse_quote;
 
 macro_rules! parse {
     ($input:expr) => {
-        match syn::parse($input).and_then(|item: syn::ItemEnum| Data::new(&item)) {
+        match syn::parse($input).and_then(|item: syn::DeriveInput| Data::new(&item)) {
             Ok(data) => data,
-            Err(err) => return TokenStream::from(err.to_compile_error()),
+            Err(e) => return e.to_compile_error().into(),
         }
     };
 }
