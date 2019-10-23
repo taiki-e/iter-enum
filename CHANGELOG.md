@@ -1,12 +1,18 @@
-# Unreleased
+# Changelog
 
-# 0.2.2 - 2019-10-08
+All notable changes to this project will be documented in this file.
+
+This project adheres to [Semantic Versioning](https://semver.org).
+
+## [Unreleased]
+
+## [0.2.2] - 2019-10-08
 
 * [Removed unstable `"exact_size_is_empty"` and `"try_trait"` features.][7]
 
 [7]: https://github.com/taiki-e/iterator-enum/pull/7
 
-# 0.2.1 - 2019-08-15
+## [0.2.1] - 2019-08-15
 
 * Added support for `rayon::iter::{ParallelIterator, IndexedParallelIterator, ParallelExtend}`. These are disabled by default and can be used by enabling `"rayon"` feature.
 
@@ -16,7 +22,7 @@
 
 * Updated `derive_utils` to 0.9.
 
-# 0.2.0 - 2019-06-16
+## [0.2.0] - 2019-06-16
 
 * Transition to Rust 2018. With this change, the minimum required version will go up to Rust 1.31.
 
@@ -24,16 +30,24 @@
 
 * Updated minimum `derive_utils` version to 0.7.2.
 
-# 0.1.2 - 2019-02-05
+## [0.1.2] - 2019-02-05
 
 * Update minimum `derive_utils` version to 0.6.3.
 
 * Update minimum `syn` version to 0.15.22.
 
-# 0.1.1 - 2019-02-03
+## [0.1.1] - 2019-02-03
 
 * Improve documentations.
 
-# 0.1.0 - 2019-02-03
+## [0.1.0] - 2019-02-03
 
 Initial release
+
+[Unreleased]: https://github.com/taiki-e/iterator-enum/compare/v0.2.2...HEAD
+[0.2.2]: https://github.com/taiki-e/iterator-enum/compare/v0.2.1...v0.2.2
+[0.2.1]: https://github.com/taiki-e/iterator-enum/compare/v0.2.0...v0.2.1
+[0.2.0]: https://github.com/taiki-e/iterator-enum/compare/v0.1.2...v0.2.0
+[0.1.2]: https://github.com/taiki-e/iterator-enum/compare/v0.1.1...v0.1.2
+[0.1.1]: https://github.com/taiki-e/iterator-enum/compare/v0.1.0...v0.1.1
+[0.1.0]: https://github.com/taiki-e/iterator-enum/releases/tag/v0.1.0
