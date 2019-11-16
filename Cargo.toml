@@ -13,6 +13,8 @@ description = """
 #[derive(Iterator, DoubleEndedIterator, ExactSizeIterator, Extend)] for enums.
 """
 
+[workspace]
+
 [lib]
 proc-macro = true
 
