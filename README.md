@@ -6,9 +6,9 @@
 [![rustc-badge]][rustc-url]
 
 [crates-badge]: https://img.shields.io/crates/v/iterator-enum.svg
-[crates-url]: https://crates.io/crates/iterator-enum/
+[crates-url]: https://crates.io/crates/iterator-enum
 [docs-badge]: https://docs.rs/iterator-enum/badge.svg
-[docs-url]: https://docs.rs/iterator-enum/
+[docs-url]: https://docs.rs/iterator-enum
 [license-badge]: https://img.shields.io/crates/l/iterator-enum.svg
 [license]: #license
 [rustc-badge]: https://img.shields.io/badge/rustc-1.31+-lightgray.svg
