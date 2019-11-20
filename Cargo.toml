@@ -5,6 +5,7 @@ authors = ["Taiki Endo <te316e89@gmail.com>"]
 edition = "2018"
 license = "Apache-2.0 OR MIT"
 repository = "https://github.com/taiki-e/iterator-enum"
+homepage = "https://github.com/taiki-e/iterator-enum"
 documentation = "https://docs.rs/iterator-enum/"
 keywords = ["iterator", "derive", "enum"]
 categories = ["rust-patterns"]
