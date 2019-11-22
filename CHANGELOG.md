@@ -6,6 +6,10 @@ This project adheres to [Semantic Versioning](https://semver.org).
 
 ## [Unreleased]
 
+## [0.2.3] - 2019-11-22
+
+* Renamed from iterator-enum to iter-enum.
+
 ## [0.2.2] - 2019-10-08
 
 * [Removed unstable `"exact_size_is_empty"` and `"try_trait"` features.][7]
