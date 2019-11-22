@@ -1,15 +1,15 @@
-# iterator-enum
+# iter-enum
 
 [![crates-badge]][crates-url]
 [![docs-badge]][docs-url]
 [![license-badge]][license]
 [![rustc-badge]][rustc-url]
 
-[crates-badge]: https://img.shields.io/crates/v/iterator-enum.svg
-[crates-url]: https://crates.io/crates/iterator-enum
-[docs-badge]: https://docs.rs/iterator-enum/badge.svg
-[docs-url]: https://docs.rs/iterator-enum
-[license-badge]: https://img.shields.io/crates/l/iterator-enum.svg
+[crates-badge]: https://img.shields.io/crates/v/iter-enum.svg
+[crates-url]: https://crates.io/crates/iter-enum
+[docs-badge]: https://docs.rs/iter-enum/badge.svg
+[docs-url]: https://docs.rs/iter-enum
+[license-badge]: https://img.shields.io/crates/l/iter-enum.svg
 [license]: #license
 [rustc-badge]: https://img.shields.io/badge/rustc-1.31+-lightgray.svg
 [rustc-url]: https://blog.rust-lang.org/2018/12/06/Rust-1.31-and-rust-2018.html
@@ -22,15 +22,15 @@ Add this to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-iterator-enum = "0.2"
+iter-enum = "0.2"
 ```
 
-The current iterator-enum requires Rust 1.31 or later.
+The current iter-enum requires Rust 1.31 or later.
 
 ## Examples
 
 ```rust
-use iterator_enum::*;
+use iter_enum::*;
 
 #[derive(Iterator, DoubleEndedIterator, ExactSizeIterator, FusedIterator, Extend)]
 enum Either<A, B> {

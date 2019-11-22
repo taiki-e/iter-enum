@@ -7,7 +7,7 @@
 #[cfg(feature = "rayon")]
 extern crate rayon_crate as rayon;
 
-use iterator_enum::*;
+use iter_enum::*;
 
 #[derive(Iterator, DoubleEndedIterator, ExactSizeIterator, FusedIterator, Extend)]
 #[cfg_attr(feature = "trusted_len", derive(TrustedLen))]

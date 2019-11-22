@@ -3,7 +3,7 @@
 //! ## Examples
 //!
 //! ```rust
-//! use iterator_enum::*;
+//! use iter_enum::*;
 //!
 //! #[derive(Iterator, DoubleEndedIterator, ExactSizeIterator, FusedIterator, Extend)]
 //! enum Either<A, B> {
@@ -20,15 +20,15 @@
 //!
 //! ## Supported traits
 //!
-//! * [`Iterator`](https://doc.rust-lang.org/std/iter/trait.Iterator.html) - [generated code](https://github.com/taiki-e/iterator-enum/blob/master/doc/iterator.md)
-//! * [`DoubleEndedIterator`](https://doc.rust-lang.org/std/iter/trait.DoubleEndedIterator.html) - [generated code](https://github.com/taiki-e/iterator-enum/blob/master/doc/double_ended_iterator.md)
-//! * [`ExactSizeIterator`](https://doc.rust-lang.org/std/iter/trait.ExactSizeIterator.html) - [generated code](https://github.com/taiki-e/iterator-enum/blob/master/doc/exact_size_iterator.md)
-//! * [`FusedIterator`](https://doc.rust-lang.org/std/iter/trait.FusedIterator.html) - [generated code](https://github.com/taiki-e/iterator-enum/blob/master/doc/fused_iterator.md)
-//! * [`Extend`](https://doc.rust-lang.org/std/iter/trait.Extend.html) - [generated code](https://github.com/taiki-e/iterator-enum/blob/master/doc/extend.md)
-//! * [`TrustedLen`](https://doc.rust-lang.org/std/iter/trait.TrustedLen.html) - [generated code](https://github.com/taiki-e/iterator-enum/blob/master/doc/trusted_len.md) (*requires `"trusted_len"` feature*)
-//! * [`ParallelIterator`](https://docs.rs/rayon/1/rayon/iter/trait.ParallelIterator.html) - [generated code](https://github.com/taiki-e/iterator-enum/blob/master/doc/parallel_iterator.md) (*requires `"rayon"` feature*)
-//! * [`IndexedParallelIterator`](https://docs.rs/rayon/1/rayon/iter/trait.IndexedParallelIterator.html) - [generated code](https://github.com/taiki-e/iterator-enum/blob/master/doc/indexed_parallel_iterator.md) (*requires `"rayon"` feature*)
-//! * [`ParallelExtend`](https://docs.rs/rayon/1/rayon/iter/trait.ParallelExtend.html) - [generated code](https://github.com/taiki-e/iterator-enum/blob/master/doc/parallel_extend.md) (*requires `"rayon"` feature*)
+//! * [`Iterator`](https://doc.rust-lang.org/std/iter/trait.Iterator.html) - [generated code](https://github.com/taiki-e/iter-enum/blob/master/doc/iterator.md)
+//! * [`DoubleEndedIterator`](https://doc.rust-lang.org/std/iter/trait.DoubleEndedIterator.html) - [generated code](https://github.com/taiki-e/iter-enum/blob/master/doc/double_ended_iterator.md)
+//! * [`ExactSizeIterator`](https://doc.rust-lang.org/std/iter/trait.ExactSizeIterator.html) - [generated code](https://github.com/taiki-e/iter-enum/blob/master/doc/exact_size_iterator.md)
+//! * [`FusedIterator`](https://doc.rust-lang.org/std/iter/trait.FusedIterator.html) - [generated code](https://github.com/taiki-e/iter-enum/blob/master/doc/fused_iterator.md)
+//! * [`Extend`](https://doc.rust-lang.org/std/iter/trait.Extend.html) - [generated code](https://github.com/taiki-e/iter-enum/blob/master/doc/extend.md)
+//! * [`TrustedLen`](https://doc.rust-lang.org/std/iter/trait.TrustedLen.html) - [generated code](https://github.com/taiki-e/iter-enum/blob/master/doc/trusted_len.md) (*requires `"trusted_len"` feature*)
+//! * [`ParallelIterator`](https://docs.rs/rayon/1/rayon/iter/trait.ParallelIterator.html) - [generated code](https://github.com/taiki-e/iter-enum/blob/master/doc/parallel_iterator.md) (*requires `"rayon"` feature*)
+//! * [`IndexedParallelIterator`](https://docs.rs/rayon/1/rayon/iter/trait.IndexedParallelIterator.html) - [generated code](https://github.com/taiki-e/iter-enum/blob/master/doc/indexed_parallel_iterator.md) (*requires `"rayon"` feature*)
+//! * [`ParallelExtend`](https://docs.rs/rayon/1/rayon/iter/trait.ParallelExtend.html) - [generated code](https://github.com/taiki-e/iter-enum/blob/master/doc/parallel_extend.md) (*requires `"rayon"` feature*)
 //!
 //! ## Optional features
 //!
@@ -42,7 +42,7 @@
 //!   * This requires Rust Nightly and you need to enable the unstable [`trusted_len`](https://github.com/rust-lang/rust/issues/37572) feature gate.
 
 #![recursion_limit = "256"]
-#![doc(html_root_url = "https://docs.rs/iterator-enum/0.2.2")]
+#![doc(html_root_url = "https://docs.rs/iter-enum/0.2.2")]
 #![doc(test(
     no_crate_inject,
     attr(deny(warnings, rust_2018_idioms, single_use_lifetimes), allow(dead_code))
