@@ -40,7 +40,12 @@ jobs:
         if: matrix.rust == 'nightly'
         run: |
           cargo install cargo-hack
+      - name: cargo check
+        if: matrix.rust == '1.31.0'
+        run: |
+          cargo check
       - name: cargo test
+        if: matrix.rust != '1.31.0'
         run: |
           cargo test
       - name: cargo test --all-features
