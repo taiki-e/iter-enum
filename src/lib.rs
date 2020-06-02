@@ -217,16 +217,12 @@ pub fn derive_trusted_len(input: TokenStream) -> TokenStream {
 
 #[proc_macro_derive(Extend)]
 pub fn derive_extend(input: TokenStream) -> TokenStream {
-    derive_trait!(
-        parse!(input),
-        parse_quote!(::core::iter::Extend),
-        parse_quote! {
-            trait Extend<__A> {
-                #[inline]
-                fn extend<__T: ::core::iter::IntoIterator<Item = __A>>(&mut self, iter: __T);
-            }
-        },
-    )
+    derive_trait!(parse!(input), parse_quote!(::core::iter::Extend), parse_quote! {
+        trait Extend<__A> {
+            #[inline]
+            fn extend<__T: ::core::iter::IntoIterator<Item = __A>>(&mut self, iter: __T);
+        }
+    },)
     .unwrap_or_else(|e| e.to_compile_error())
     .into()
 }
@@ -234,21 +230,17 @@ pub fn derive_extend(input: TokenStream) -> TokenStream {
 #[cfg(feature = "rayon")]
 #[proc_macro_derive(ParallelIterator)]
 pub fn derive_parallel_iterator(input: TokenStream) -> TokenStream {
-    derive_trait!(
-        parse!(input),
-        parse_quote!(::rayon::iter::ParallelIterator),
-        parse_quote! {
-            trait ParallelIterator {
-                type Item;
-                #[inline]
-                fn drive_unindexed<__C>(self, consumer: __C) -> __C::Result
-                where
-                    __C: ::rayon::iter::plumbing::UnindexedConsumer<Self::Item>;
-                #[inline]
-                fn opt_len(&self) -> ::core::option::Option<usize>;
-            }
-        },
-    )
+    derive_trait!(parse!(input), parse_quote!(::rayon::iter::ParallelIterator), parse_quote! {
+        trait ParallelIterator {
+            type Item;
+            #[inline]
+            fn drive_unindexed<__C>(self, consumer: __C) -> __C::Result
+            where
+                __C: ::rayon::iter::plumbing::UnindexedConsumer<Self::Item>;
+            #[inline]
+            fn opt_len(&self) -> ::core::option::Option<usize>;
+        }
+    },)
     .unwrap_or_else(|e| e.to_compile_error())
     .into()
 }
@@ -282,18 +274,14 @@ pub fn derive_indexed_parallel_iterator(input: TokenStream) -> TokenStream {
 #[cfg(feature = "rayon")]
 #[proc_macro_derive(ParallelExtend)]
 pub fn derive_parallel_extend(input: TokenStream) -> TokenStream {
-    derive_trait!(
-        parse!(input),
-        parse_quote!(::rayon::iter::ParallelExtend),
-        parse_quote! {
-            trait ParallelExtend<__T: Send> {
-                #[inline]
-                fn par_extend<__I>(&mut self, par_iter: __I)
-                where
-                    __I: ::rayon::iter::IntoParallelIterator<Item = __T>;
-            }
-        },
-    )
+    derive_trait!(parse!(input), parse_quote!(::rayon::iter::ParallelExtend), parse_quote! {
+        trait ParallelExtend<__T: Send> {
+            #[inline]
+            fn par_extend<__I>(&mut self, par_iter: __I)
+            where
+                __I: ::rayon::iter::IntoParallelIterator<Item = __T>;
+        }
+    },)
     .unwrap_or_else(|e| e.to_compile_error())
     .into()
 }
