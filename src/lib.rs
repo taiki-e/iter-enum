@@ -1,6 +1,6 @@
 //! \#\[derive(Iterator, DoubleEndedIterator, ExactSizeIterator, FusedIterator, Extend)\] for enums.
 //!
-//! ## Examples
+//! # Examples
 //!
 //! ```rust
 //! use iter_enum::*;
@@ -18,7 +18,7 @@
 //!
 //! See [auto_enums](https://github.com/taiki-e/auto_enums) crate for how to automate patterns like this.
 //!
-//! ## Supported traits
+//! # Supported traits
 //!
 //! * [`Iterator`](https://doc.rust-lang.org/std/iter/trait.Iterator.html) - [generated code](https://github.com/taiki-e/iter-enum/blob/master/doc/iterator.md)
 //! * [`DoubleEndedIterator`](https://doc.rust-lang.org/std/iter/trait.DoubleEndedIterator.html) - [generated code](https://github.com/taiki-e/iter-enum/blob/master/doc/double_ended_iterator.md)
@@ -30,7 +30,7 @@
 //! * [`IndexedParallelIterator`](https://docs.rs/rayon/1/rayon/iter/trait.IndexedParallelIterator.html) - [generated code](https://github.com/taiki-e/iter-enum/blob/master/doc/indexed_parallel_iterator.md) (*requires `"rayon"` feature*)
 //! * [`ParallelExtend`](https://docs.rs/rayon/1/rayon/iter/trait.ParallelExtend.html) - [generated code](https://github.com/taiki-e/iter-enum/blob/master/doc/parallel_extend.md) (*requires `"rayon"` feature*)
 //!
-//! ## Optional features
+//! # Optional features
 //!
 //! * `rayon`
 //!   * Disabled by default.
