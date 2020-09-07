@@ -61,6 +61,18 @@ See [auto_enums](https://github.com/taiki-e/auto_enums) crate for how to automat
 * [`IndexedParallelIterator`](https://docs.rs/rayon/1/rayon/iter/trait.IndexedParallelIterator.html) - [generated code](doc/indexed_parallel_iterator.md) (*requires `"rayon"` feature*)
 * [`ParallelExtend`](https://docs.rs/rayon/1/rayon/iter/trait.ParallelExtend.html) - [generated code](doc/parallel_extend.md) (*requires `"rayon"` feature*)
 
+## Related Projects
+
+* [auto_enums]: A library for to allow multiple return types by automatically generated enum.
+* [derive_utils]: A procedural macro helper for easily writing [derives macros][proc-macro-derive] for enums.
+* [futures-enum]: \#\[derive(Future, Stream, Sink, AsyncRead, AsyncWrite, AsyncSeek, AsyncBufRead)\] for enums.
+* [io-enum]: \#\[derive(Read, Write, Seek, BufRead)\] for enums.
+
+[auto_enums]: https://github.com/taiki-e/auto_enums
+[derive_utils]: https://github.com/taiki-e/derive_utils
+[futures-enum]: https://github.com/taiki-e/futures-enum
+[io-enum]: https://github.com/taiki-e/io-enum
+
 ## License
 
 Licensed under either of
