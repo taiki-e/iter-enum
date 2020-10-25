@@ -6,7 +6,11 @@
 #[cfg(feature = "rayon")]
 extern crate rayon_crate as rayon;
 
-use iter_enum::*;
+#[cfg(feature = "trusted_len")]
+use iter_enum::TrustedLen;
+use iter_enum::{DoubleEndedIterator, ExactSizeIterator, Extend, FusedIterator, Iterator};
+#[cfg(feature = "rayon")]
+use iter_enum::{IndexedParallelIterator, ParallelExtend, ParallelIterator};
 
 #[derive(Iterator, DoubleEndedIterator, ExactSizeIterator, FusedIterator, Extend)]
 #[cfg_attr(feature = "trusted_len", derive(TrustedLen))]
