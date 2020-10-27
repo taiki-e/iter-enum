@@ -31,8 +31,8 @@ rayon = []
 
 [dependencies]
 derive_utils = { version = "0.10" }
-quote = "1.0"
-syn = "1.0"
+quote = "1"
+syn = "1"
 
 [dev-dependencies]
-rayon_crate = { version = "1.2", package = "rayon" }
+rayon_crate = { version = "1", package = "rayon" }
