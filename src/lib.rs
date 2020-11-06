@@ -41,7 +41,7 @@
 //!   * Enable to use `#[derive(TrustedLen)]`.
 //!   * This requires Rust Nightly and you need to enable the unstable [`trusted_len`](https://github.com/rust-lang/rust/issues/37572) feature gate.
 
-#![doc(html_root_url = "https://docs.rs/iter-enum/0.2.4")]
+#![doc(html_root_url = "https://docs.rs/iter-enum/0.2.5")]
 #![doc(test(
     no_crate_inject,
     attr(deny(warnings, rust_2018_idioms, single_use_lifetimes), allow(dead_code))
