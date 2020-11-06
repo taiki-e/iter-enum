@@ -30,7 +30,7 @@ trusted_len = []
 rayon = []
 
 [dependencies]
-derive_utils = { version = "0.10" }
+derive_utils = { version = "0.11" }
 quote = "1"
 syn = "1"
 

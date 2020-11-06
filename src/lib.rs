@@ -129,7 +129,6 @@ pub fn derive_iterator(input: TokenStream) -> TokenStream {
             }
         },
     )
-    .unwrap_or_else(|e| e.to_compile_error())
     .into()
 }
 
@@ -161,7 +160,6 @@ pub fn derive_double_ended_iterator(input: TokenStream) -> TokenStream {
             }
         },
     )
-    .unwrap_or_else(|e| e.to_compile_error())
     .into()
 }
 

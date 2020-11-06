@@ -6,6 +6,8 @@ This project adheres to [Semantic Versioning](https://semver.org).
 
 ## [Unreleased]
 
+* Update `derive_utils` to 0.11.
+
 ## [0.2.4] - 2020-06-02
 
 * Updated `derive_utils` to 0.10.
