@@ -32,14 +32,11 @@
 //!
 //! # Optional features
 //!
-//! * `rayon`
-//!   * Disabled by default.
+//! * **`rayon`**
 //!   * Enable to use `#[derive(ParallelIterator, IndexedParallelIterator, ParallelExtend)]`.
-//!
-//! * `trusted_len`
-//!   * Disabled by default.
+//! * **`trusted_len`**
 //!   * Enable to use `#[derive(TrustedLen)]`.
-//!   * This requires Rust Nightly and you need to enable the unstable [`trusted_len`](https://github.com/rust-lang/rust/issues/37572) feature gate.
+//!   * Note that this feature is unstable and may cause incompatible changes between patch versions.
 
 #![doc(html_root_url = "https://docs.rs/iter-enum/0.2.5")]
 #![doc(test(

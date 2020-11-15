@@ -61,6 +61,14 @@ See [auto_enums](https://github.com/taiki-e/auto_enums) crate for how to automat
 * [`IndexedParallelIterator`](https://docs.rs/rayon/1/rayon/iter/trait.IndexedParallelIterator.html) - [generated code](doc/indexed_parallel_iterator.md) (*requires `"rayon"` feature*)
 * [`ParallelExtend`](https://docs.rs/rayon/1/rayon/iter/trait.ParallelExtend.html) - [generated code](doc/parallel_extend.md) (*requires `"rayon"` feature*)
 
+## Optional features
+
+* **`rayon`**
+  * Enable to use `#[derive(ParallelIterator, IndexedParallelIterator, ParallelExtend)]`.
+* **`trusted_len`**
+  * Enable to use `#[derive(TrustedLen)]`.
+  * Note that this feature is unstable and may cause incompatible changes between patch versions.
+
 ## Related Projects
 
 * [auto_enums]: A library for to allow multiple return types by automatically generated enum.
