@@ -38,7 +38,6 @@
 //!   * Enable to use `#[derive(TrustedLen)]`.
 //!   * Note that this feature is unstable and may cause incompatible changes between patch versions.
 
-#![doc(html_root_url = "https://docs.rs/iter-enum/0.2.5")]
 #![doc(test(
     no_crate_inject,
     attr(deny(warnings, rust_2018_idioms, single_use_lifetimes), allow(dead_code))
