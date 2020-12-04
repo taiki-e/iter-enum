@@ -29,6 +29,7 @@ trusted_len = []
 # #[derive(ParallelIterator, IndexedParallelIterator, ParallelExtend)]
 rayon = []
 
+# NB: rayon is public dependencies.
 [dependencies]
 derive_utils = { version = "0.11" }
 quote = "1"
