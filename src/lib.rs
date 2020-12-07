@@ -16,7 +16,8 @@
 //! }
 //! ```
 //!
-//! See [auto_enums](https://github.com/taiki-e/auto_enums) crate for how to automate patterns like this.
+//! See [auto_enums](https://github.com/taiki-e/auto_enums) crate for how to
+//! automate patterns like this.
 //!
 //! # Supported traits
 //!

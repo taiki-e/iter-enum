@@ -1,4 +1,4 @@
-## [`ParallelIterator`](https://docs.rs/rayon/1/rayon/iter/trait.ParallelIterator.html)
+# [`ParallelIterator`](https://docs.rs/rayon/1/rayon/iter/trait.ParallelIterator.html)
 
 When deriving for enum like the following:
 
