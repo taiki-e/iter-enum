@@ -1,6 +1,6 @@
 [package]
 name = "iter-enum"
-version = "0.2.5"
+version = "0.2.6"
 authors = ["Taiki Endo <te316e89@gmail.com>"]
 edition = "2018"
 license = "Apache-2.0 OR MIT"
@@ -36,4 +36,4 @@ quote = "1"
 syn = "1"
 
 [dev-dependencies]
-rayon_crate = { version = "1", package = "rayon" }
+rayon_crate = { package = "rayon", version = "1" }
