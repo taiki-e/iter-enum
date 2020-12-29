@@ -20,6 +20,9 @@ function error {
 
 cd "$(cd "$(dirname "${0}")" && pwd)"/..
 
+git diff --exit-code
+git diff --exit-code --staged
+
 # parsing & verifying
 version="${1:?}"
 tag="v${version}"
