@@ -8,55 +8,55 @@ This project adheres to [Semantic Versioning](https://semver.org).
 
 ## [0.2.5] - 2020-11-06
 
-* Update `derive_utils` to 0.11.
+- Update `derive_utils` to 0.11.
 
 ## [0.2.4] - 2020-06-02
 
-* Updated `derive_utils` to 0.10.
+- Updated `derive_utils` to 0.10.
 
 ## [0.2.3] - 2019-11-22
 
-* Renamed from iterator-enum to iter-enum.
+- Renamed from iterator-enum to iter-enum.
 
 ## [0.2.2] - 2019-10-08
 
-* [Removed unstable `"exact_size_is_empty"` and `"try_trait"` features.][7]
+- [Removed unstable `"exact_size_is_empty"` and `"try_trait"` features.][7]
 
 [7]: https://github.com/taiki-e/iter-enum/pull/7
 
 ## [0.2.1] - 2019-08-15
 
-* Added support for `rayon::iter::{ParallelIterator, IndexedParallelIterator, ParallelExtend}`. These are disabled by default and can be used by enabling `"rayon"` feature.
+- Added support for `rayon::iter::{ParallelIterator, IndexedParallelIterator, ParallelExtend}`. These are disabled by default and can be used by enabling `"rayon"` feature.
 
-* Added generated code examples.
+- Added generated code examples.
 
-* Updated `syn` and `quote` to 1.0.
+- Updated `syn` and `quote` to 1.0.
 
-* Updated `derive_utils` to 0.9.
+- Updated `derive_utils` to 0.9.
 
 ## [0.2.0] - 2019-06-16
 
-* Transition to Rust 2018. With this change, the minimum required version will go up to Rust 1.31.
+- Transition to Rust 2018. With this change, the minimum required version will go up to Rust 1.31.
 
-* Removed `"std"` feature. This crate can generate accurate code without `"std"` feature.
+- Removed `"std"` feature. This crate can generate accurate code without `"std"` feature.
 
-* Updated minimum `derive_utils` version to 0.7.2.
+- Updated minimum `derive_utils` version to 0.7.2.
 
 ## [0.1.2] - 2019-02-05
 
-* Update minimum `derive_utils` version to 0.6.3.
+- Update minimum `derive_utils` version to 0.6.3.
 
-* Update minimum `syn` version to 0.15.22.
+- Update minimum `syn` version to 0.15.22.
 
 ## [0.1.1] - 2019-02-03
 
-* Documentation improvements.
+- Documentation improvements.
 
 ## [0.1.0] - 2019-02-03
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/iter-enum/compare/v0.2.5...HEAD
+[unreleased]: https://github.com/taiki-e/iter-enum/compare/v0.2.5...HEAD
 [0.2.5]: https://github.com/taiki-e/iter-enum/compare/v0.2.4...v0.2.5
 [0.2.4]: https://github.com/taiki-e/iter-enum/compare/v0.2.3...v0.2.4
 [0.2.3]: https://github.com/taiki-e/iter-enum/compare/v0.2.2...v0.2.3
