@@ -9,6 +9,7 @@ documentation = "https://docs.rs/iter-enum"
 keywords = ["iterator", "derive", "enum"]
 categories = ["rust-patterns"]
 readme = "README.md"
+exclude = ["/.github", "/scripts"]
 description = """
 #[derive(Iterator, DoubleEndedIterator, ExactSizeIterator, Extend)] for enums.
 """
