@@ -44,30 +44,30 @@ automate patterns like this.
 
 ## Supported traits
 
-* [`Iterator`](https://doc.rust-lang.org/std/iter/trait.Iterator.html) - [generated code](doc/iterator.md)
-* [`DoubleEndedIterator`](https://doc.rust-lang.org/std/iter/trait.DoubleEndedIterator.html) - [generated code](doc/double_ended_iterator.md)
-* [`ExactSizeIterator`](https://doc.rust-lang.org/std/iter/trait.ExactSizeIterator.html) - [generated code](doc/exact_size_iterator.md)
-* [`FusedIterator`](https://doc.rust-lang.org/std/iter/trait.FusedIterator.html) - [generated code](doc/fused_iterator.md)
-* [`Extend`](https://doc.rust-lang.org/std/iter/trait.Extend.html) - [generated code](doc/extend.md)
-* [`TrustedLen`](https://doc.rust-lang.org/std/iter/trait.TrustedLen.html) - [generated code](doc/trusted_len.md) (*requires `"trusted_len"` feature*)
-* [`ParallelIterator`](https://docs.rs/rayon/1/rayon/iter/trait.ParallelIterator.html) - [generated code](doc/parallel_iterator.md) (*requires `"rayon"` feature*)
-* [`IndexedParallelIterator`](https://docs.rs/rayon/1/rayon/iter/trait.IndexedParallelIterator.html) - [generated code](doc/indexed_parallel_iterator.md) (*requires `"rayon"` feature*)
-* [`ParallelExtend`](https://docs.rs/rayon/1/rayon/iter/trait.ParallelExtend.html) - [generated code](doc/parallel_extend.md) (*requires `"rayon"` feature*)
+- [`Iterator`](https://doc.rust-lang.org/std/iter/trait.Iterator.html) - [generated code](doc/iterator.md)
+- [`DoubleEndedIterator`](https://doc.rust-lang.org/std/iter/trait.DoubleEndedIterator.html) - [generated code](doc/double_ended_iterator.md)
+- [`ExactSizeIterator`](https://doc.rust-lang.org/std/iter/trait.ExactSizeIterator.html) - [generated code](doc/exact_size_iterator.md)
+- [`FusedIterator`](https://doc.rust-lang.org/std/iter/trait.FusedIterator.html) - [generated code](doc/fused_iterator.md)
+- [`Extend`](https://doc.rust-lang.org/std/iter/trait.Extend.html) - [generated code](doc/extend.md)
+- [`TrustedLen`](https://doc.rust-lang.org/std/iter/trait.TrustedLen.html) - [generated code](doc/trusted_len.md) (*requires `"trusted_len"` feature*)
+- [`ParallelIterator`](https://docs.rs/rayon/1/rayon/iter/trait.ParallelIterator.html) - [generated code](doc/parallel_iterator.md) (*requires `"rayon"` feature*)
+- [`IndexedParallelIterator`](https://docs.rs/rayon/1/rayon/iter/trait.IndexedParallelIterator.html) - [generated code](doc/indexed_parallel_iterator.md) (*requires `"rayon"` feature*)
+- [`ParallelExtend`](https://docs.rs/rayon/1/rayon/iter/trait.ParallelExtend.html) - [generated code](doc/parallel_extend.md) (*requires `"rayon"` feature*)
 
 ## Optional features
 
-* **`rayon`**
-  * Enable to use `#[derive(ParallelIterator, IndexedParallelIterator, ParallelExtend)]`.
-* **`trusted_len`**
-  * Enable to use `#[derive(TrustedLen)]`.
-  * Note that this feature is unstable and may cause incompatible changes between patch versions.
+- **`rayon`**
+  - Enable to use `#[derive(ParallelIterator, IndexedParallelIterator, ParallelExtend)]`.
+- **`trusted_len`**
+  - Enable to use `#[derive(TrustedLen)]`.
+  - Note that this feature is unstable and may cause incompatible changes between patch versions.
 
 ## Related Projects
 
-* [auto_enums]: A library for to allow multiple return types by automatically generated enum.
-* [derive_utils]: A procedural macro helper for easily writing [derives macros][proc-macro-derive] for enums.
-* [futures-enum]: \#\[derive(Future, Stream, Sink, AsyncRead, AsyncWrite, AsyncSeek, AsyncBufRead)\] for enums.
-* [io-enum]: \#\[derive(Read, Write, Seek, BufRead)\] for enums.
+- [auto_enums]: A library for to allow multiple return types by automatically generated enum.
+- [derive_utils]: A procedural macro helper for easily writing [derives macros][proc-macro-derive] for enums.
+- [futures-enum]: \#\[derive(Future, Stream, Sink, AsyncRead, AsyncWrite, AsyncSeek, AsyncBufRead)\] for enums.
+- [io-enum]: \#\[derive(Read, Write, Seek, BufRead)\] for enums.
 
 [auto_enums]: https://github.com/taiki-e/auto_enums
 [derive_utils]: https://github.com/taiki-e/derive_utils
