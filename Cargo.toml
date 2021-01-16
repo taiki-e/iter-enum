@@ -8,7 +8,7 @@ repository = "https://github.com/taiki-e/iter-enum"
 documentation = "https://docs.rs/iter-enum"
 keywords = ["iterator", "derive", "enum"]
 categories = ["rust-patterns"]
-exclude = ["/.github", "/scripts"]
+exclude = ["/.*", "/scripts"]
 description = """
 #[derive(Iterator, DoubleEndedIterator, ExactSizeIterator, Extend)] for enums.
 """
