@@ -32,9 +32,7 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [0.2.2] - 2019-10-08
 
-- [Removed unstable `"exact_size_is_empty"` and `"try_trait"` features.][7]
-
-[7]: https://github.com/taiki-e/iter-enum/pull/7
+- [Removed unstable `"exact_size_is_empty"` and `"try_trait"` features.](https://github.com/taiki-e/iter-enum/pull/7)
 
 ## [0.2.1] - 2019-08-15
 
