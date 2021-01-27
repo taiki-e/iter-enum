@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [1.0.0] - 2021-01-27
+
 - Remove unstable `trusted_len` feature.
 
 ## [0.2.7] - 2021-01-05
@@ -68,7 +70,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/iter-enum/compare/v0.2.7...HEAD
+[Unreleased]: https://github.com/taiki-e/iter-enum/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/taiki-e/iter-enum/compare/v0.2.7...v1.0.0
 [0.2.7]: https://github.com/taiki-e/iter-enum/compare/v0.2.6...v0.2.7
 [0.2.6]: https://github.com/taiki-e/iter-enum/compare/v0.2.5...v0.2.6
 [0.2.5]: https://github.com/taiki-e/iter-enum/compare/v0.2.4...v0.2.5

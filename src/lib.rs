@@ -16,8 +16,7 @@
 //! }
 //! ```
 //!
-//! See [auto_enums](https://github.com/taiki-e/auto_enums) crate for how to
-//! automate patterns like this.
+//! See [auto_enums] crate for how to automate patterns like this.
 //!
 //! # Supported traits
 //!
@@ -34,6 +33,8 @@
 //!
 //! * **`rayon`**
 //!   * Enable to use `#[derive(ParallelIterator, IndexedParallelIterator, ParallelExtend)]`.
+//!
+//! [auto_enums]: https://github.com/taiki-e/auto_enums
 
 #![doc(test(
     no_crate_inject,

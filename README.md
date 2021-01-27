@@ -14,7 +14,7 @@ Add this to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-iter-enum = "0.2"
+iter-enum = "1"
 ```
 
 *Compiler support: requires rustc 1.31+*
@@ -39,8 +39,7 @@ fn foo(x: i32) -> impl Iterator<Item = i32> {
 }
 ```
 
-See [auto_enums](https://github.com/taiki-e/auto_enums) crate for how to
-automate patterns like this.
+See [auto_enums] crate for how to automate patterns like this.
 
 ## Supported traits
 
@@ -69,6 +68,7 @@ automate patterns like this.
 [derive_utils]: https://github.com/taiki-e/derive_utils
 [futures-enum]: https://github.com/taiki-e/futures-enum
 [io-enum]: https://github.com/taiki-e/io-enum
+[proc-macro-derive]: https://doc.rust-lang.org/reference/procedural-macros.html#derive-macros
 
 ## License
 
