@@ -24,8 +24,6 @@ members = ["tests/doc"]
 proc-macro = true
 
 [features]
-# #[derive(TrustedLen)]
-trusted_len = []
 # #[derive(ParallelIterator, IndexedParallelIterator, ParallelExtend)]
 rayon = []
 
