@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Remove unstable `trusted_len` feature.
+
 ## [0.2.7] - 2021-01-05
 
 - Exclude unneeded files from crates.io.
