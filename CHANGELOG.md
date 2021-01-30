@@ -12,7 +12,7 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [1.0.0] - 2021-01-27
 
-- Remove unstable `trusted_len` feature.
+- [Remove unstable `trusted_len` feature.](https://github.com/taiki-e/iter-enum/pull/14)
 
 ## [0.2.7] - 2021-01-05
 
@@ -28,33 +28,33 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [0.2.4] - 2020-06-02
 
-- Updated `derive_utils` to 0.10.
+- Update `derive_utils` to 0.10.
 
 ## [0.2.3] - 2019-11-22
 
-- Renamed from iterator-enum to iter-enum.
+- Rename from `iterator-enum` to `iter-enum`.
 
 ## [0.2.2] - 2019-10-08
 
-- [Removed unstable `"exact_size_is_empty"` and `"try_trait"` features.](https://github.com/taiki-e/iter-enum/pull/7)
+- [Remove unstable `exact_size_is_empty` and `try_trait` features.](https://github.com/taiki-e/iter-enum/pull/7)
 
 ## [0.2.1] - 2019-08-15
 
-- Added support for `rayon::iter::{ParallelIterator, IndexedParallelIterator, ParallelExtend}`. These are disabled by default and can be used by enabling `"rayon"` feature.
+- Add support for `rayon::iter::{ParallelIterator, IndexedParallelIterator, ParallelExtend}`. These are disabled by default and can be used by enabling `rayon` feature.
 
-- Added generated code examples.
+- Add generated code examples.
 
-- Updated `syn` and `quote` to 1.0.
+- Update `syn` and `quote` to 1.0.
 
-- Updated `derive_utils` to 0.9.
+- Update `derive_utils` to 0.9.
 
 ## [0.2.0] - 2019-06-16
 
 - Transition to Rust 2018. With this change, the minimum required version will go up to Rust 1.31.
 
-- Removed `"std"` feature. This crate can generate accurate code without `"std"` feature.
+- Remove `std` feature. This crate can generate accurate code without `std` feature.
 
-- Updated minimum `derive_utils` version to 0.7.2.
+- Update minimum `derive_utils` version to 0.7.2.
 
 ## [0.1.2] - 2019-02-05
 
