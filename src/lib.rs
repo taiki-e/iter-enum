@@ -234,7 +234,7 @@ pub fn derive_parallel_extend(input: TokenStream) -> TokenStream {
     quick_derive! {
         input,
         ::rayon::iter::ParallelExtend,
-        trait ParallelExtend<__T: Send> {
+        trait ParallelExtend<__T: ::core::marker::Send> {
             #[inline]
             fn par_extend<__I>(&mut self, par_iter: __I)
             where
