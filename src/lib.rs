@@ -20,14 +20,14 @@
 //!
 //! # Supported traits
 //!
-//! * [`Iterator`](https://doc.rust-lang.org/std/iter/trait.Iterator.html) - [generated code](https://github.com/taiki-e/iter-enum/blob/HEAD/doc/iterator.md)
-//! * [`DoubleEndedIterator`](https://doc.rust-lang.org/std/iter/trait.DoubleEndedIterator.html) - [generated code](https://github.com/taiki-e/iter-enum/blob/HEAD/doc/double_ended_iterator.md)
-//! * [`ExactSizeIterator`](https://doc.rust-lang.org/std/iter/trait.ExactSizeIterator.html) - [generated code](https://github.com/taiki-e/iter-enum/blob/HEAD/doc/exact_size_iterator.md)
-//! * [`FusedIterator`](https://doc.rust-lang.org/std/iter/trait.FusedIterator.html) - [generated code](https://github.com/taiki-e/iter-enum/blob/HEAD/doc/fused_iterator.md)
-//! * [`Extend`](https://doc.rust-lang.org/std/iter/trait.Extend.html) - [generated code](https://github.com/taiki-e/iter-enum/blob/HEAD/doc/extend.md)
-//! * [`ParallelIterator`](https://docs.rs/rayon/1/rayon/iter/trait.ParallelIterator.html) - [generated code](https://github.com/taiki-e/iter-enum/blob/HEAD/doc/parallel_iterator.md) (*requires `"rayon"` feature*)
-//! * [`IndexedParallelIterator`](https://docs.rs/rayon/1/rayon/iter/trait.IndexedParallelIterator.html) - [generated code](https://github.com/taiki-e/iter-enum/blob/HEAD/doc/indexed_parallel_iterator.md) (*requires `"rayon"` feature*)
-//! * [`ParallelExtend`](https://docs.rs/rayon/1/rayon/iter/trait.ParallelExtend.html) - [generated code](https://github.com/taiki-e/iter-enum/blob/HEAD/doc/parallel_extend.md) (*requires `"rayon"` feature*)
+//! * [`Iterator`](https://doc.rust-lang.org/std/iter/trait.Iterator.html) - [generated code](https://github.com/taiki-e/iter-enum/blob/HEAD/docs/iterator.md)
+//! * [`DoubleEndedIterator`](https://doc.rust-lang.org/std/iter/trait.DoubleEndedIterator.html) - [generated code](https://github.com/taiki-e/iter-enum/blob/HEAD/docs/double_ended_iterator.md)
+//! * [`ExactSizeIterator`](https://doc.rust-lang.org/std/iter/trait.ExactSizeIterator.html) - [generated code](https://github.com/taiki-e/iter-enum/blob/HEAD/docs/exact_size_iterator.md)
+//! * [`FusedIterator`](https://doc.rust-lang.org/std/iter/trait.FusedIterator.html) - [generated code](https://github.com/taiki-e/iter-enum/blob/HEAD/docs/fused_iterator.md)
+//! * [`Extend`](https://doc.rust-lang.org/std/iter/trait.Extend.html) - [generated code](https://github.com/taiki-e/iter-enum/blob/HEAD/docs/extend.md)
+//! * [`ParallelIterator`](https://docs.rs/rayon/1/rayon/iter/trait.ParallelIterator.html) - [generated code](https://github.com/taiki-e/iter-enum/blob/HEAD/docs/parallel_iterator.md) (*requires `"rayon"` feature*)
+//! * [`IndexedParallelIterator`](https://docs.rs/rayon/1/rayon/iter/trait.IndexedParallelIterator.html) - [generated code](https://github.com/taiki-e/iter-enum/blob/HEAD/docs/indexed_parallel_iterator.md) (*requires `"rayon"` feature*)
+//! * [`ParallelExtend`](https://docs.rs/rayon/1/rayon/iter/trait.ParallelExtend.html) - [generated code](https://github.com/taiki-e/iter-enum/blob/HEAD/docs/parallel_extend.md) (*requires `"rayon"` feature*)
 //!
 //! # Optional features
 //!
