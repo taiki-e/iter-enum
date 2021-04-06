@@ -46,6 +46,7 @@
 #![forbid(unsafe_code)]
 #![warn(future_incompatible, rust_2018_idioms, single_use_lifetimes, unreachable_pub)]
 #![warn(clippy::all, clippy::default_trait_access)]
+#![cfg_attr(docsrs, feature(doc_cfg))]
 
 // older compilers require explicit `extern crate`.
 #[allow(unused_extern_crates)]
@@ -189,6 +190,7 @@ pub fn derive_extend(input: TokenStream) -> TokenStream {
 }
 
 #[cfg(feature = "rayon")]
+#[cfg_attr(docsrs, doc(cfg(feature = "rayon")))]
 #[proc_macro_derive(ParallelIterator)]
 pub fn derive_parallel_iterator(input: TokenStream) -> TokenStream {
     quick_derive! {
@@ -207,6 +209,7 @@ pub fn derive_parallel_iterator(input: TokenStream) -> TokenStream {
 }
 
 #[cfg(feature = "rayon")]
+#[cfg_attr(docsrs, doc(cfg(feature = "rayon")))]
 #[proc_macro_derive(IndexedParallelIterator)]
 pub fn derive_indexed_parallel_iterator(input: TokenStream) -> TokenStream {
     quick_derive! {
@@ -229,6 +232,7 @@ pub fn derive_indexed_parallel_iterator(input: TokenStream) -> TokenStream {
 }
 
 #[cfg(feature = "rayon")]
+#[cfg_attr(docsrs, doc(cfg(feature = "rayon")))]
 #[proc_macro_derive(ParallelExtend)]
 pub fn derive_parallel_extend(input: TokenStream) -> TokenStream {
     quick_derive! {
