@@ -1,23 +1,8 @@
-# [`IndexedParallelIterator`](https://docs.rs/rayon/1/rayon/iter/trait.IndexedParallelIterator.html)
-
-When deriving for enum like the following:
-
-```rust
-#[enum(IndexedParallelIterator)]
+use iter_enum::*;
 enum Enum<A, B> {
     A(A),
     B(B),
 }
-```
-
-Code like this will be generated:
-
-```rust
-enum Enum<A, B> {
-    A(A),
-    B(B),
-}
-
 impl<A, B> ::rayon::iter::IndexedParallelIterator for Enum<A, B>
 where
     A: ::rayon::iter::IndexedParallelIterator,
@@ -33,7 +18,6 @@ where
             Enum::B(x) => ::rayon::iter::IndexedParallelIterator::drive(x, consumer),
         }
     }
-
     #[inline]
     fn len(&self) -> usize {
         match self {
@@ -41,16 +25,15 @@ where
             Enum::B(x) => ::rayon::iter::IndexedParallelIterator::len(x),
         }
     }
-
     #[inline]
     fn with_producer<__CB>(self, callback: __CB) -> __CB::Output
     where
         __CB: ::rayon::iter::plumbing::ProducerCallback<Self::Item>,
     {
         match self {
-            Enum::A(x) => ::rayon::iter::IndexedParallelIterator::opt_len(x),
-            Enum::B(x) => ::rayon::iter::IndexedParallelIterator::opt_len(x),
+            Enum::A(x) => ::rayon::iter::IndexedParallelIterator::with_producer(x, callback),
+            Enum::B(x) => ::rayon::iter::IndexedParallelIterator::with_producer(x, callback),
         }
     }
 }
-```
+fn main() {}

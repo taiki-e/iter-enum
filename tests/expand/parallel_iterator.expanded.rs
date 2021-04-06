@@ -1,30 +1,14 @@
-# [`ParallelIterator`](https://docs.rs/rayon/1/rayon/iter/trait.ParallelIterator.html)
-
-When deriving for enum like the following:
-
-```rust
-#[derive(ParallelIterator)]
+use iter_enum::*;
 enum Enum<A, B> {
     A(A),
     B(B),
 }
-```
-
-Code like this will be generated:
-
-```rust
-enum Enum<A, B> {
-    A(A),
-    B(B),
-}
-
 impl<A, B> ::rayon::iter::ParallelIterator for Enum<A, B>
 where
     A: ::rayon::iter::ParallelIterator,
     B: ::rayon::iter::ParallelIterator<Item = <A as ::rayon::iter::ParallelIterator>::Item>,
 {
     type Item = <A as ::rayon::iter::ParallelIterator>::Item;
-
     #[inline]
     fn drive_unindexed<__C>(self, consumer: __C) -> __C::Result
     where
@@ -35,7 +19,6 @@ where
             Enum::B(x) => ::rayon::iter::ParallelIterator::drive_unindexed(x, consumer),
         }
     }
-
     #[inline]
     fn opt_len(&self) -> ::core::option::Option<usize> {
         match self {
@@ -44,4 +27,4 @@ where
         }
     }
 }
-```
+fn main() {}

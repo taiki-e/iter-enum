@@ -43,14 +43,14 @@ See [auto_enums] crate for how to automate patterns like this.
 
 ## Supported traits
 
-- [`Iterator`](https://doc.rust-lang.org/std/iter/trait.Iterator.html) - [generated code](docs/iterator.md)
-- [`DoubleEndedIterator`](https://doc.rust-lang.org/std/iter/trait.DoubleEndedIterator.html) - [generated code](docs/double_ended_iterator.md)
-- [`ExactSizeIterator`](https://doc.rust-lang.org/std/iter/trait.ExactSizeIterator.html) - [generated code](docs/exact_size_iterator.md)
-- [`FusedIterator`](https://doc.rust-lang.org/std/iter/trait.FusedIterator.html) - [generated code](docs/fused_iterator.md)
-- [`Extend`](https://doc.rust-lang.org/std/iter/trait.Extend.html) - [generated code](docs/extend.md)
-- [`ParallelIterator`](https://docs.rs/rayon/1/rayon/iter/trait.ParallelIterator.html) - [generated code](docs/parallel_iterator.md) (*requires `"rayon"` feature*)
-- [`IndexedParallelIterator`](https://docs.rs/rayon/1/rayon/iter/trait.IndexedParallelIterator.html) - [generated code](docs/indexed_parallel_iterator.md) (*requires `"rayon"` feature*)
-- [`ParallelExtend`](https://docs.rs/rayon/1/rayon/iter/trait.ParallelExtend.html) - [generated code](docs/parallel_extend.md) (*requires `"rayon"` feature*)
+- [`Iterator`](https://doc.rust-lang.org/std/iter/trait.Iterator.html) - [example](tests/expand/iterator.rs) | [generated code](tests/expand/iterator.expanded.rs)
+- [`DoubleEndedIterator`](https://doc.rust-lang.org/std/iter/trait.DoubleEndedIterator.html) - [example](tests/expand/double_ended_iterator.rs) | [generated code](tests/expand/double_ended_iterator.expanded.rs)
+- [`ExactSizeIterator`](https://doc.rust-lang.org/std/iter/trait.ExactSizeIterator.html) - [example](tests/expand/exact_size_iterator.rs) | [generated code](tests/expand/exact_size_iterator.expanded.rs)
+- [`FusedIterator`](https://doc.rust-lang.org/std/iter/trait.FusedIterator.html) - [example](tests/expand/fused_iterator.rs) | [generated code](tests/expand/fused_iterator.expanded.rs)
+- [`Extend`](https://doc.rust-lang.org/std/iter/trait.Extend.html) - [example](tests/expand/extend.rs) | [generated code](tests/expand/extend.expanded.rs)
+- [`ParallelIterator`](https://docs.rs/rayon/1/rayon/iter/trait.ParallelIterator.html) (*requires `"rayon"` feature*) - [example](tests/expand/parallel_iterator.rs) | [generated code](tests/expand/parallel_iterator.expanded.rs)
+- [`IndexedParallelIterator`](https://docs.rs/rayon/1/rayon/iter/trait.IndexedParallelIterator.html) (*requires `"rayon"` feature*) - [example](tests/expand/indexed_parallel_iterator.rs) | [generated code](tests/expand/indexed_parallel_iterator.expanded.rs)
+- [`ParallelExtend`](https://docs.rs/rayon/1/rayon/iter/trait.ParallelExtend.html) (*requires `"rayon"` feature*) - [example](tests/expand/parallel_extend.rs) | [generated code](tests/expand/parallel_extend.expanded.rs)
 
 ## Optional features
 

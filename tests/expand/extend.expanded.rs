@@ -1,24 +1,9 @@
-# [`Extend`](https://doc.rust-lang.org/std/iter/trait.Extend.html)
-
-When deriving for enum like the following:
-
-```rust
-#[derive(Extend)]
+use iter_enum::*;
 enum Enum<A, B> {
     A(A),
     B(B),
 }
-```
-
-Code like this will be generated:
-
-```rust
-enum Enum<A, B> {
-    A(A),
-    B(B),
-}
-
-impl<A, B> ::core::iter::Extend<__A> for Enum<A, B>
+impl<A, B, __A> ::core::iter::Extend<__A> for Enum<A, B>
 where
     A: ::core::iter::Extend<__A>,
     B: ::core::iter::Extend<__A>,
@@ -31,4 +16,4 @@ where
         }
     }
 }
-```
+fn main() {}

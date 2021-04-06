@@ -35,4 +35,6 @@ quote = "1"
 syn = "1"
 
 [dev-dependencies]
+macrotest = "1.0.8"
 rayon_crate = { package = "rayon", version = "1" }
+rustversion = "1"
