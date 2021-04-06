@@ -10,6 +10,12 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [1.0.1] - 2021-04-06
+
+- [Apply `doc(cfg(...))` on feature gated APIs.](https://github.com/taiki-e/iter-enum/pull/15)
+
+- Documentation improvements.
+
 ## [1.0.0] - 2021-01-27
 
 - [Remove unstable `trusted_len` feature.](https://github.com/taiki-e/iter-enum/pull/14)
@@ -70,7 +76,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/iter-enum/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/taiki-e/iter-enum/compare/v1.0.1...HEAD
+[1.0.1]: https://github.com/taiki-e/iter-enum/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/taiki-e/iter-enum/compare/v0.2.7...v1.0.0
 [0.2.7]: https://github.com/taiki-e/iter-enum/compare/v0.2.6...v0.2.7
 [0.2.6]: https://github.com/taiki-e/iter-enum/compare/v0.2.5...v0.2.6
