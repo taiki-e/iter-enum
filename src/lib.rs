@@ -12,7 +12,11 @@
 //! }
 //!
 //! fn foo(x: i32) -> impl Iterator<Item = i32> {
-//!     if x > 0 { Either::A(0..=x) } else { Either::B(std::iter::empty()) }
+//!     if x > 0 {
+//!         Either::A(0..=x)
+//!     } else {
+//!         Either::B(std::iter::empty())
+//!     }
 //! }
 //! ```
 //!
