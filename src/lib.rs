@@ -35,8 +35,8 @@
 //!
 //! # Optional features
 //!
-//! * **`rayon`**
-//!   * Enable to use `#[derive(ParallelIterator, IndexedParallelIterator, ParallelExtend)]`.
+//! - **`rayon`**
+//!   - Enable to use `#[derive(ParallelIterator, IndexedParallelIterator, ParallelExtend)]`.
 //!
 //! [auto_enums]: https://github.com/taiki-e/auto_enums
 
