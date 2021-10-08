@@ -48,7 +48,7 @@
     )
 ))]
 #![forbid(unsafe_code)]
-#![warn(future_incompatible, rust_2018_idioms, single_use_lifetimes, unreachable_pub)]
+#![warn(rust_2018_idioms, single_use_lifetimes, unreachable_pub)]
 #![warn(clippy::default_trait_access, clippy::wildcard_imports)]
 #![cfg_attr(docsrs, feature(doc_cfg))]
 
