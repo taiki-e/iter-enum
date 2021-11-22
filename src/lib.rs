@@ -194,6 +194,7 @@ pub fn derive_extend(input: TokenStream) -> TokenStream {
 }
 
 #[cfg(feature = "rayon")]
+#[cfg_attr(docsrs, doc(cfg(feature = "rayon")))]
 #[proc_macro_derive(ParallelIterator)]
 pub fn derive_parallel_iterator(input: TokenStream) -> TokenStream {
     quick_derive! {
@@ -212,6 +213,7 @@ pub fn derive_parallel_iterator(input: TokenStream) -> TokenStream {
 }
 
 #[cfg(feature = "rayon")]
+#[cfg_attr(docsrs, doc(cfg(feature = "rayon")))]
 #[proc_macro_derive(IndexedParallelIterator)]
 pub fn derive_indexed_parallel_iterator(input: TokenStream) -> TokenStream {
     quick_derive! {
@@ -234,6 +236,7 @@ pub fn derive_indexed_parallel_iterator(input: TokenStream) -> TokenStream {
 }
 
 #[cfg(feature = "rayon")]
+#[cfg_attr(docsrs, doc(cfg(feature = "rayon")))]
 #[proc_macro_derive(ParallelExtend)]
 pub fn derive_parallel_extend(input: TokenStream) -> TokenStream {
     quick_derive! {
