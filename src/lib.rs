@@ -49,7 +49,7 @@
 ))]
 #![forbid(unsafe_code)]
 #![warn(rust_2018_idioms, single_use_lifetimes, unreachable_pub)]
-#![warn(clippy::default_trait_access, clippy::wildcard_imports)]
+#![warn(clippy::pedantic)]
 #![cfg_attr(docsrs, feature(doc_cfg))]
 
 // older compilers require explicit `extern crate`.
