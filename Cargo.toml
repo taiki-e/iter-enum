@@ -1,6 +1,6 @@
 [package]
 name = "iter-enum"
-version = "1.0.1" #publish:version
+version = "1.0.1"
 edition = "2018"
 rust-version = "1.31"
 license = "Apache-2.0 OR MIT"
