@@ -61,12 +61,10 @@ See [auto_enums] crate for how to automate patterns like this.
 
 - [auto_enums]: A library for to allow multiple return types by automatically generated enum.
 - [derive_utils]: A procedural macro helper for easily writing [derives macros][proc-macro-derive] for enums.
-- [futures-enum]: \#\[derive(Future, Stream, Sink, AsyncRead, AsyncWrite, AsyncSeek, AsyncBufRead)\] for enums.
 - [io-enum]: \#\[derive(Read, Write, Seek, BufRead)\] for enums.
 
 [auto_enums]: https://github.com/taiki-e/auto_enums
 [derive_utils]: https://github.com/taiki-e/derive_utils
-[futures-enum]: https://github.com/taiki-e/futures-enum
 [io-enum]: https://github.com/taiki-e/io-enum
 [proc-macro-derive]: https://doc.rust-lang.org/reference/procedural-macros.html#derive-macros
 
