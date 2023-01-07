@@ -1,7 +1,7 @@
 /*!
 \#\[derive(Iterator, DoubleEndedIterator, ExactSizeIterator, FusedIterator, Extend)\] for enums.
 
-# Examples
+## Examples
 
 ```rust
 use iter_enum::*;
@@ -14,16 +14,16 @@ enum Either<A, B> {
 
 fn foo(x: i32) -> impl Iterator<Item = i32> {
     if x > 0 {
-        Either::A(0..=x)
+        Either::A(x..=0)
     } else {
-        Either::B(std::iter::empty())
+        Either::B(Some(x).into_iter())
     }
 }
 ```
 
 See [auto_enums] crate for how to automate patterns like this.
 
-# Supported traits
+## Supported traits
 
 - [`Iterator`](https://doc.rust-lang.org/std/iter/trait.Iterator.html) - [example](https://github.com/taiki-e/iter-enum/blob/HEAD/tests/expand/iterator.rs) | [generated code](https://github.com/taiki-e/iter-enum/blob/HEAD/tests/expand/iterator.expanded.rs)
 - [`DoubleEndedIterator`](https://doc.rust-lang.org/std/iter/trait.DoubleEndedIterator.html) - [example](https://github.com/taiki-e/iter-enum/blob/HEAD/tests/expand/double_ended_iterator.rs) | [generated code](https://github.com/taiki-e/iter-enum/blob/HEAD/tests/expand/double_ended_iterator.expanded.rs)
@@ -34,12 +34,21 @@ See [auto_enums] crate for how to automate patterns like this.
 - [`IndexedParallelIterator`](https://docs.rs/rayon/1/rayon/iter/trait.IndexedParallelIterator.html) (*requires `"rayon"` feature*) - [example](https://github.com/taiki-e/iter-enum/blob/HEAD/tests/expand/indexed_parallel_iterator.rs) | [generated code](https://github.com/taiki-e/iter-enum/blob/HEAD/tests/expand/indexed_parallel_iterator.expanded.rs)
 - [`ParallelExtend`](https://docs.rs/rayon/1/rayon/iter/trait.ParallelExtend.html) (*requires `"rayon"` feature*) - [example](https://github.com/taiki-e/iter-enum/blob/HEAD/tests/expand/parallel_extend.rs) | [generated code](https://github.com/taiki-e/iter-enum/blob/HEAD/tests/expand/parallel_extend.expanded.rs)
 
-# Optional features
+## Optional features
 
 - **`rayon`**
   - Enable to use `#[derive(ParallelIterator, IndexedParallelIterator, ParallelExtend)]`.
 
+## Related Projects
+
+- [auto_enums]: A library for to allow multiple return types by automatically generated enum.
+- [derive_utils]: A procedural macro helper for easily writing [derives macros][proc-macro-derive] for enums.
+- [io-enum]: \#\[derive(Read, Write, Seek, BufRead)\] for enums.
+
 [auto_enums]: https://github.com/taiki-e/auto_enums
+[derive_utils]: https://github.com/taiki-e/derive_utils
+[io-enum]: https://github.com/taiki-e/io-enum
+[proc-macro-derive]: https://doc.rust-lang.org/reference/procedural-macros.html#derive-macros
 */
 
 #![doc(test(
