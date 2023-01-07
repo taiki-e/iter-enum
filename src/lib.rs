@@ -1,44 +1,46 @@
-//! \#\[derive(Iterator, DoubleEndedIterator, ExactSizeIterator, FusedIterator, Extend)\] for enums.
-//!
-//! # Examples
-//!
-//! ```rust
-//! use iter_enum::*;
-//!
-//! #[derive(Iterator, DoubleEndedIterator, ExactSizeIterator, FusedIterator, Extend)]
-//! enum Either<A, B> {
-//!     A(A),
-//!     B(B),
-//! }
-//!
-//! fn foo(x: i32) -> impl Iterator<Item = i32> {
-//!     if x > 0 {
-//!         Either::A(0..=x)
-//!     } else {
-//!         Either::B(std::iter::empty())
-//!     }
-//! }
-//! ```
-//!
-//! See [auto_enums] crate for how to automate patterns like this.
-//!
-//! # Supported traits
-//!
-//! - [`Iterator`](https://doc.rust-lang.org/std/iter/trait.Iterator.html) - [example](https://github.com/taiki-e/iter-enum/blob/HEAD/tests/expand/iterator.rs) | [generated code](https://github.com/taiki-e/iter-enum/blob/HEAD/tests/expand/iterator.expanded.rs)
-//! - [`DoubleEndedIterator`](https://doc.rust-lang.org/std/iter/trait.DoubleEndedIterator.html) - [example](https://github.com/taiki-e/iter-enum/blob/HEAD/tests/expand/double_ended_iterator.rs) | [generated code](https://github.com/taiki-e/iter-enum/blob/HEAD/tests/expand/double_ended_iterator.expanded.rs)
-//! - [`ExactSizeIterator`](https://doc.rust-lang.org/std/iter/trait.ExactSizeIterator.html) - [example](https://github.com/taiki-e/iter-enum/blob/HEAD/tests/expand/exact_size_iterator.rs) | [generated code](https://github.com/taiki-e/iter-enum/blob/HEAD/tests/expand/exact_size_iterator.expanded.rs)
-//! - [`FusedIterator`](https://doc.rust-lang.org/std/iter/trait.FusedIterator.html) - [example](https://github.com/taiki-e/iter-enum/blob/HEAD/tests/expand/fused_iterator.rs) | [generated code](https://github.com/taiki-e/iter-enum/blob/HEAD/tests/expand/fused_iterator.expanded.rs)
-//! - [`Extend`](https://doc.rust-lang.org/std/iter/trait.Extend.html) - [example](https://github.com/taiki-e/iter-enum/blob/HEAD/tests/expand/extend.rs) | [generated code](https://github.com/taiki-e/iter-enum/blob/HEAD/tests/expand/extend.expanded.rs)
-//! - [`ParallelIterator`](https://docs.rs/rayon/1/rayon/iter/trait.ParallelIterator.html) (*requires `"rayon"` feature*) - [example](https://github.com/taiki-e/iter-enum/blob/HEAD/tests/expand/parallel_iterator.rs) | [generated code](https://github.com/taiki-e/iter-enum/blob/HEAD/tests/expand/parallel_iterator.expanded.rs)
-//! - [`IndexedParallelIterator`](https://docs.rs/rayon/1/rayon/iter/trait.IndexedParallelIterator.html) (*requires `"rayon"` feature*) - [example](https://github.com/taiki-e/iter-enum/blob/HEAD/tests/expand/indexed_parallel_iterator.rs) | [generated code](https://github.com/taiki-e/iter-enum/blob/HEAD/tests/expand/indexed_parallel_iterator.expanded.rs)
-//! - [`ParallelExtend`](https://docs.rs/rayon/1/rayon/iter/trait.ParallelExtend.html) (*requires `"rayon"` feature*) - [example](https://github.com/taiki-e/iter-enum/blob/HEAD/tests/expand/parallel_extend.rs) | [generated code](https://github.com/taiki-e/iter-enum/blob/HEAD/tests/expand/parallel_extend.expanded.rs)
-//!
-//! # Optional features
-//!
-//! - **`rayon`**
-//!   - Enable to use `#[derive(ParallelIterator, IndexedParallelIterator, ParallelExtend)]`.
-//!
-//! [auto_enums]: https://github.com/taiki-e/auto_enums
+/*!
+\#\[derive(Iterator, DoubleEndedIterator, ExactSizeIterator, FusedIterator, Extend)\] for enums.
+
+# Examples
+
+```rust
+use iter_enum::*;
+
+#[derive(Iterator, DoubleEndedIterator, ExactSizeIterator, FusedIterator, Extend)]
+enum Either<A, B> {
+    A(A),
+    B(B),
+}
+
+fn foo(x: i32) -> impl Iterator<Item = i32> {
+    if x > 0 {
+        Either::A(0..=x)
+    } else {
+        Either::B(std::iter::empty())
+    }
+}
+```
+
+See [auto_enums] crate for how to automate patterns like this.
+
+# Supported traits
+
+- [`Iterator`](https://doc.rust-lang.org/std/iter/trait.Iterator.html) - [example](https://github.com/taiki-e/iter-enum/blob/HEAD/tests/expand/iterator.rs) | [generated code](https://github.com/taiki-e/iter-enum/blob/HEAD/tests/expand/iterator.expanded.rs)
+- [`DoubleEndedIterator`](https://doc.rust-lang.org/std/iter/trait.DoubleEndedIterator.html) - [example](https://github.com/taiki-e/iter-enum/blob/HEAD/tests/expand/double_ended_iterator.rs) | [generated code](https://github.com/taiki-e/iter-enum/blob/HEAD/tests/expand/double_ended_iterator.expanded.rs)
+- [`ExactSizeIterator`](https://doc.rust-lang.org/std/iter/trait.ExactSizeIterator.html) - [example](https://github.com/taiki-e/iter-enum/blob/HEAD/tests/expand/exact_size_iterator.rs) | [generated code](https://github.com/taiki-e/iter-enum/blob/HEAD/tests/expand/exact_size_iterator.expanded.rs)
+- [`FusedIterator`](https://doc.rust-lang.org/std/iter/trait.FusedIterator.html) - [example](https://github.com/taiki-e/iter-enum/blob/HEAD/tests/expand/fused_iterator.rs) | [generated code](https://github.com/taiki-e/iter-enum/blob/HEAD/tests/expand/fused_iterator.expanded.rs)
+- [`Extend`](https://doc.rust-lang.org/std/iter/trait.Extend.html) - [example](https://github.com/taiki-e/iter-enum/blob/HEAD/tests/expand/extend.rs) | [generated code](https://github.com/taiki-e/iter-enum/blob/HEAD/tests/expand/extend.expanded.rs)
+- [`ParallelIterator`](https://docs.rs/rayon/1/rayon/iter/trait.ParallelIterator.html) (*requires `"rayon"` feature*) - [example](https://github.com/taiki-e/iter-enum/blob/HEAD/tests/expand/parallel_iterator.rs) | [generated code](https://github.com/taiki-e/iter-enum/blob/HEAD/tests/expand/parallel_iterator.expanded.rs)
+- [`IndexedParallelIterator`](https://docs.rs/rayon/1/rayon/iter/trait.IndexedParallelIterator.html) (*requires `"rayon"` feature*) - [example](https://github.com/taiki-e/iter-enum/blob/HEAD/tests/expand/indexed_parallel_iterator.rs) | [generated code](https://github.com/taiki-e/iter-enum/blob/HEAD/tests/expand/indexed_parallel_iterator.expanded.rs)
+- [`ParallelExtend`](https://docs.rs/rayon/1/rayon/iter/trait.ParallelExtend.html) (*requires `"rayon"` feature*) - [example](https://github.com/taiki-e/iter-enum/blob/HEAD/tests/expand/parallel_extend.rs) | [generated code](https://github.com/taiki-e/iter-enum/blob/HEAD/tests/expand/parallel_extend.expanded.rs)
+
+# Optional features
+
+- **`rayon`**
+  - Enable to use `#[derive(ParallelIterator, IndexedParallelIterator, ParallelExtend)]`.
+
+[auto_enums]: https://github.com/taiki-e/auto_enums
+*/
 
 #![doc(test(
     no_crate_inject,
