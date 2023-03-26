@@ -2,7 +2,7 @@
 name = "iter-enum"
 version = "1.0.2"
 edition = "2018"
-rust-version = "1.31"
+rust-version = "1.56"
 license = "Apache-2.0 OR MIT"
 repository = "https://github.com/taiki-e/iter-enum"
 keywords = ["iterator", "derive", "enum"]
@@ -18,7 +18,6 @@ rustdoc-args = ["--cfg", "docsrs"]
 targets = ["x86_64-unknown-linux-gnu"]
 
 [workspace]
-members = ["tests/doc"]
 
 [lib]
 proc-macro = true
