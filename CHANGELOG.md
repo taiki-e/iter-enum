@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [1.1.0] - 2023-03-26
+
 - Update `syn` dependency to 2. This increase the minimum supported Rust version from Rust 1.31 to Rust 1.56.
 
 ## [1.0.2] - 2022-12-10
@@ -82,7 +84,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/iter-enum/compare/v1.0.2...HEAD
+[Unreleased]: https://github.com/taiki-e/iter-enum/compare/v1.1.0...HEAD
+[1.1.0]: https://github.com/taiki-e/iter-enum/compare/v1.0.2...v1.1.0
 [1.0.2]: https://github.com/taiki-e/iter-enum/compare/v1.0.1...v1.0.2
 [1.0.1]: https://github.com/taiki-e/iter-enum/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/taiki-e/iter-enum/compare/v0.2.7...v1.0.0
