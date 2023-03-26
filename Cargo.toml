@@ -29,9 +29,9 @@ rayon = []
 
 # Note: rayon is public dependency.
 [dependencies]
-derive_utils = "0.12"
+derive_utils = "0.13"
 quote = "1"
-syn = "1"
+syn = "2"
 
 [dev-dependencies]
 macrotest = "1.0.9"
