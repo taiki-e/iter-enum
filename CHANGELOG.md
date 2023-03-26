@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `syn` dependency to 2. This increase the minimum supported Rust version from Rust 1.31 to Rust 1.56.
+
 ## [1.0.2] - 2022-12-10
 
 - Update `derive_utils` to 0.12.
