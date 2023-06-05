@@ -7,7 +7,7 @@ license = "Apache-2.0 OR MIT"
 repository = "https://github.com/taiki-e/iter-enum"
 keywords = ["iterator", "derive", "enum"]
 categories = ["no-std", "rust-patterns"]
-exclude = ["/.*", "/tools"]
+exclude = ["/.*", "/tools", "/DEVELOPMENT.md"]
 description = """
 #[derive(Iterator, DoubleEndedIterator, ExactSizeIterator, Extend)] for enums.
 """
