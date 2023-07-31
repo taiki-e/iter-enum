@@ -1,3 +1,2 @@
-accum
 expandtest
 unindexed
