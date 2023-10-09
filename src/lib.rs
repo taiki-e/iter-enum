@@ -79,10 +79,6 @@ See [auto_enums] crate for how to automate patterns like this.
 #![allow(clippy::doc_markdown)]
 #![cfg_attr(docsrs, feature(doc_cfg))]
 
-// older compilers require explicit `extern crate`.
-#[allow(unused_extern_crates)]
-extern crate proc_macro;
-
 use derive_utils::{derive_trait, quick_derive};
 use proc_macro::TokenStream;
 use quote::{format_ident, quote};
