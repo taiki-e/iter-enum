@@ -1,3 +1,4 @@
+extern crate rayon_crate as rayon;
 use iter_enum::*;
 enum Enum<A, B> {
     A(A),
