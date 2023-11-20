@@ -44,6 +44,8 @@ jobs:
       event_name: ${{ github.event_name }}
   tidy:
     uses: taiki-e/github-actions/.github/workflows/tidy.yml@main
+    with:
+      known-cfgs: iter_enum_doc_cfg
 
   test:
     strategy:
