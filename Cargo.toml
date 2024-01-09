@@ -27,7 +27,7 @@ rayon = []
 # Note: rayon is public dependency.
 [dependencies]
 derive_utils = "0.13.1"
-quote = "1"
+quote = "1.0.25"
 syn = "2"
 
 [dev-dependencies]
