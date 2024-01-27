@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update minimum `derive_utils` version to 0.14.1.
+
 ## [1.1.2] - 2024-01-27
 
 - Update `derive_utils` to 0.14. This fixes "overflow evaluating the requirement" errors in two situations.

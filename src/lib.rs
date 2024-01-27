@@ -79,40 +79,10 @@ See [auto_enums] crate for how to automate patterns like this.
 
 use derive_utils::quick_derive;
 use proc_macro::TokenStream;
-use quote::quote;
 
 #[proc_macro_derive(Iterator)]
 pub fn derive_iterator(input: TokenStream) -> TokenStream {
-    // TODO: When `try_trait` stabilized, add `try_fold` and remove `fold`, `find` etc. conditionally.
-
-    // It is equally efficient if `try_fold` can be used.
-    let try_trait = quote! {
-        #[inline]
-        fn fold<__U, __F>(self, init: __U, f: __F) -> __U
-        where
-            __F: ::core::ops::FnMut(__U, Self::Item) -> __U;
-        #[inline]
-        fn all<__F>(&mut self, f: __F) -> bool
-        where
-            __F: ::core::ops::FnMut(Self::Item) -> bool;
-        #[inline]
-        fn any<__F>(&mut self, f: __F) -> bool
-        where
-            __F: ::core::ops::FnMut(Self::Item) -> bool;
-        #[inline]
-        fn find<__P>(&mut self, predicate: __P) -> ::core::option::Option<Self::Item>
-        where
-            __P: ::core::ops::FnMut(&Self::Item) -> bool;
-        #[inline]
-        fn find_map<__U, __F>(&mut self, f: __F) -> ::core::option::Option<__U>
-        where
-            __F: ::core::ops::FnMut(Self::Item) -> ::core::option::Option<__U>;
-        #[inline]
-        fn position<__P>(&mut self, predicate: __P) -> ::core::option::Option<usize>
-        where
-            __P: ::core::ops::FnMut(Self::Item) -> bool;
-    };
-
+    // TODO: Add try_fold once try_trait_v2 is stabilized https://github.com/rust-lang/rust/issues/84277
     quick_derive! {
         input,
         ::core::iter::Iterator,
@@ -136,27 +106,40 @@ pub fn derive_iterator(input: TokenStream) -> TokenStream {
             where
                 __U: ::core::default::Default + ::core::iter::Extend<Self::Item>,
                 __F: ::core::ops::FnMut(&Self::Item) -> bool;
-            #try_trait
+
+            // Once try_trait_v2 is stabilized, we can replace these by implementing try_fold.
+            #[inline]
+            fn fold<__U, __F>(self, init: __U, f: __F) -> __U
+            where
+                __F: ::core::ops::FnMut(__U, Self::Item) -> __U;
+            #[inline]
+            fn all<__F>(&mut self, f: __F) -> bool
+            where
+                __F: ::core::ops::FnMut(Self::Item) -> bool;
+            #[inline]
+            fn any<__F>(&mut self, f: __F) -> bool
+            where
+                __F: ::core::ops::FnMut(Self::Item) -> bool;
+            #[inline]
+            fn find<__P>(&mut self, predicate: __P) -> ::core::option::Option<Self::Item>
+            where
+                __P: ::core::ops::FnMut(&Self::Item) -> bool;
+            #[inline]
+            fn find_map<__U, __F>(&mut self, f: __F) -> ::core::option::Option<__U>
+            where
+                __F: ::core::ops::FnMut(Self::Item) -> ::core::option::Option<__U>;
+            #[inline]
+            fn position<__P>(&mut self, predicate: __P) -> ::core::option::Option<usize>
+            where
+                __P: ::core::ops::FnMut(Self::Item) -> bool;
         }
     }
 }
 
 #[proc_macro_derive(DoubleEndedIterator)]
 pub fn derive_double_ended_iterator(input: TokenStream) -> TokenStream {
-    // TODO: When `try_trait` stabilized, add `try_rfold` and remove `rfold` and `rfind` conditionally.
-
-    // It is equally efficient if `try_rfold` can be used.
-    let try_trait = quote! {
-        #[inline]
-        fn rfold<__U, __F>(self, init: __U, f: __F) -> __U
-        where
-            __F: ::core::ops::FnMut(__U, Self::Item) -> __U;
-        #[inline]
-        fn rfind<__P>(&mut self, predicate: __P) -> ::core::option::Option<Self::Item>
-        where
-            __P: ::core::ops::FnMut(&Self::Item) -> bool;
-    };
-
+    // TODO: Add try_rfold once try_trait_v2 is stabilized https://github.com/rust-lang/rust/issues/84277
+    // TODO: Add advance_back_by once stabilized https://github.com/rust-lang/rust/issues/77404
     quick_derive! {
         input,
         ::core::iter::DoubleEndedIterator,
@@ -164,15 +147,25 @@ pub fn derive_double_ended_iterator(input: TokenStream) -> TokenStream {
         trait DoubleEndedIterator: ::core::iter::Iterator {
             #[inline]
             fn next_back(&mut self) -> ::core::option::Option<Self::Item>;
-            #try_trait
+            #[inline]
+            fn nth_back(&mut self, n: usize) -> ::core::option::Option<Self::Item>;
+
+            // Once try_trait_v2 is stabilized, we can replace these by implementing try_rfold.
+            #[inline]
+            fn rfold<__U, __F>(self, init: __U, f: __F) -> __U
+            where
+                __F: ::core::ops::FnMut(__U, Self::Item) -> __U;
+            #[inline]
+            fn rfind<__P>(&mut self, predicate: __P) -> ::core::option::Option<Self::Item>
+            where
+                __P: ::core::ops::FnMut(&Self::Item) -> bool;
         }
     }
 }
 
 #[proc_macro_derive(ExactSizeIterator)]
 pub fn derive_exact_size_iterator(input: TokenStream) -> TokenStream {
-    // TODO: When `exact_size_is_empty` stabilized, add `is_empty` conditionally.
-
+    // TODO: Add is_empty once stabilized https://github.com/rust-lang/rust/issues/35428
     quick_derive! {
         input,
         ::core::iter::ExactSizeIterator,
@@ -196,6 +189,7 @@ pub fn derive_fused_iterator(input: TokenStream) -> TokenStream {
 
 #[proc_macro_derive(Extend)]
 pub fn derive_extend(input: TokenStream) -> TokenStream {
+    // TODO: Add extend_one,extend_reserve once stabilized https://github.com/rust-lang/rust/issues/72631
     quick_derive! {
         input,
         ::core::iter::Extend,

@@ -16,6 +16,13 @@ where
         }
     }
     #[inline]
+    fn nth_back(&mut self, n: usize) -> ::core::option::Option<Self::Item> {
+        match self {
+            Enum::A(x) => <A as ::core::iter::DoubleEndedIterator>::nth_back(x, n),
+            Enum::B(x) => <B as ::core::iter::DoubleEndedIterator>::nth_back(x, n),
+        }
+    }
+    #[inline]
     fn rfold<__U, __F>(self, init: __U, f: __F) -> __U
     where
         __F: ::core::ops::FnMut(__U, Self::Item) -> __U,
