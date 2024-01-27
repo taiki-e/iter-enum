@@ -3,6 +3,7 @@
 #![no_std]
 #![allow(dead_code)]
 
+extern crate alloc;
 #[cfg(feature = "rayon")]
 extern crate rayon_crate as rayon;
 
@@ -19,6 +20,17 @@ use rayon::iter::{IndexedParallelIterator, ParallelExtend, ParallelIterator};
 enum Either<A, B> {
     A(A),
     B(B),
+}
+
+// https://github.com/taiki-e/derive_utils/issues/47
+#[derive(Iterator)]
+enum A {
+    A(alloc::boxed::Box<B>),
+}
+#[derive(Iterator)]
+enum B {
+    C(alloc::vec::IntoIter<i32>),
+    B(A),
 }
 
 fn _assert_impl<

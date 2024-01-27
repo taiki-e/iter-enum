@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `derive_utils` to 0.14. This fixes "overflow evaluating the requirement" error on recursive structures without type parameters.
+
 ## [1.1.1] - 2023-06-29
 
 - Fix build error from dependency when built with `-Z minimal-versions`.

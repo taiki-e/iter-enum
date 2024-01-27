@@ -11,8 +11,8 @@ where
     #[inline]
     fn len(&self) -> usize {
         match self {
-            Enum::A(x) => ::core::iter::ExactSizeIterator::len(x),
-            Enum::B(x) => ::core::iter::ExactSizeIterator::len(x),
+            Enum::A(x) => <A as ::core::iter::ExactSizeIterator>::len(x),
+            Enum::B(x) => <B as ::core::iter::ExactSizeIterator>::len(x),
         }
     }
 }

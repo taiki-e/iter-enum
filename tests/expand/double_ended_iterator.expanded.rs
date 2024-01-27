@@ -11,8 +11,8 @@ where
     #[inline]
     fn next_back(&mut self) -> ::core::option::Option<Self::Item> {
         match self {
-            Enum::A(x) => ::core::iter::DoubleEndedIterator::next_back(x),
-            Enum::B(x) => ::core::iter::DoubleEndedIterator::next_back(x),
+            Enum::A(x) => <A as ::core::iter::DoubleEndedIterator>::next_back(x),
+            Enum::B(x) => <B as ::core::iter::DoubleEndedIterator>::next_back(x),
         }
     }
     #[inline]
@@ -21,8 +21,8 @@ where
         __F: ::core::ops::FnMut(__U, Self::Item) -> __U,
     {
         match self {
-            Enum::A(x) => ::core::iter::DoubleEndedIterator::rfold(x, init, f),
-            Enum::B(x) => ::core::iter::DoubleEndedIterator::rfold(x, init, f),
+            Enum::A(x) => <A as ::core::iter::DoubleEndedIterator>::rfold(x, init, f),
+            Enum::B(x) => <B as ::core::iter::DoubleEndedIterator>::rfold(x, init, f),
         }
     }
     #[inline]
@@ -31,8 +31,8 @@ where
         __P: ::core::ops::FnMut(&Self::Item) -> bool,
     {
         match self {
-            Enum::A(x) => ::core::iter::DoubleEndedIterator::rfind(x, predicate),
-            Enum::B(x) => ::core::iter::DoubleEndedIterator::rfind(x, predicate),
+            Enum::A(x) => <A as ::core::iter::DoubleEndedIterator>::rfind(x, predicate),
+            Enum::B(x) => <B as ::core::iter::DoubleEndedIterator>::rfind(x, predicate),
         }
     }
 }

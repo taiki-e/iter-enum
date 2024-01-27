@@ -17,15 +17,19 @@ where
         __C: ::rayon::iter::plumbing::Consumer<Self::Item>,
     {
         match self {
-            Enum::A(x) => ::rayon::iter::IndexedParallelIterator::drive(x, consumer),
-            Enum::B(x) => ::rayon::iter::IndexedParallelIterator::drive(x, consumer),
+            Enum::A(x) => {
+                <A as ::rayon::iter::IndexedParallelIterator>::drive(x, consumer)
+            }
+            Enum::B(x) => {
+                <B as ::rayon::iter::IndexedParallelIterator>::drive(x, consumer)
+            }
         }
     }
     #[inline]
     fn len(&self) -> usize {
         match self {
-            Enum::A(x) => ::rayon::iter::IndexedParallelIterator::len(x),
-            Enum::B(x) => ::rayon::iter::IndexedParallelIterator::len(x),
+            Enum::A(x) => <A as ::rayon::iter::IndexedParallelIterator>::len(x),
+            Enum::B(x) => <B as ::rayon::iter::IndexedParallelIterator>::len(x),
         }
     }
     #[inline]
@@ -35,10 +39,10 @@ where
     {
         match self {
             Enum::A(x) => {
-                ::rayon::iter::IndexedParallelIterator::with_producer(x, callback)
+                <A as ::rayon::iter::IndexedParallelIterator>::with_producer(x, callback)
             }
             Enum::B(x) => {
-                ::rayon::iter::IndexedParallelIterator::with_producer(x, callback)
+                <B as ::rayon::iter::IndexedParallelIterator>::with_producer(x, callback)
             }
         }
     }

@@ -77,10 +77,9 @@ See [auto_enums] crate for how to automate patterns like this.
 #![forbid(unsafe_code)]
 #![cfg_attr(iter_enum_doc_cfg, feature(doc_cfg))]
 
-use derive_utils::{derive_trait, quick_derive};
+use derive_utils::quick_derive;
 use proc_macro::TokenStream;
-use quote::{format_ident, quote};
-use syn::{parse_macro_input, parse_quote};
+use quote::quote;
 
 #[proc_macro_derive(Iterator)]
 pub fn derive_iterator(input: TokenStream) -> TokenStream {
@@ -114,36 +113,32 @@ pub fn derive_iterator(input: TokenStream) -> TokenStream {
             __P: ::core::ops::FnMut(Self::Item) -> bool;
     };
 
-    derive_trait(
-        &parse_macro_input!(input),
-        parse_quote!(::core::iter::Iterator),
-        None,
-        parse_quote! {
-            trait Iterator {
-                type Item;
-                #[inline]
-                fn next(&mut self) -> ::core::option::Option<Self::Item>;
-                #[inline]
-                fn size_hint(&self) -> (usize, ::core::option::Option<usize>);
-                #[inline]
-                fn count(self) -> usize;
-                #[inline]
-                fn last(self) -> ::core::option::Option<Self::Item>;
-                #[inline]
-                fn nth(&mut self, n: usize) -> ::core::option::Option<Self::Item>;
-                #[inline]
-                #[must_use = "if you really need to exhaust the iterator, consider `.for_each(drop)` instead"]
-                fn collect<__U: ::core::iter::FromIterator<Self::Item>>(self) -> __U;
-                #[inline]
-                fn partition<__U, __F>(self, f: __F) -> (__U, __U)
-                where
-                    __U: ::core::default::Default + ::core::iter::Extend<Self::Item>,
-                    __F: ::core::ops::FnMut(&Self::Item) -> bool;
-                #try_trait
-            }
-        },
-    )
-    .into()
+    quick_derive! {
+        input,
+        ::core::iter::Iterator,
+        trait Iterator {
+            type Item;
+            #[inline]
+            fn next(&mut self) -> ::core::option::Option<Self::Item>;
+            #[inline]
+            fn size_hint(&self) -> (usize, ::core::option::Option<usize>);
+            #[inline]
+            fn count(self) -> usize;
+            #[inline]
+            fn last(self) -> ::core::option::Option<Self::Item>;
+            #[inline]
+            fn nth(&mut self, n: usize) -> ::core::option::Option<Self::Item>;
+            #[inline]
+            #[must_use = "if you really need to exhaust the iterator, consider `.for_each(drop)` instead"]
+            fn collect<__U: ::core::iter::FromIterator<Self::Item>>(self) -> __U;
+            #[inline]
+            fn partition<__U, __F>(self, f: __F) -> (__U, __U)
+            where
+                __U: ::core::default::Default + ::core::iter::Extend<Self::Item>,
+                __F: ::core::ops::FnMut(&Self::Item) -> bool;
+            #try_trait
+        }
+    }
 }
 
 #[proc_macro_derive(DoubleEndedIterator)]
@@ -162,19 +157,16 @@ pub fn derive_double_ended_iterator(input: TokenStream) -> TokenStream {
             __P: ::core::ops::FnMut(&Self::Item) -> bool;
     };
 
-    derive_trait(
-        &parse_macro_input!(input),
-        parse_quote!(::core::iter::DoubleEndedIterator),
-        Some(format_ident!("Item")),
-        parse_quote! {
-            trait DoubleEndedIterator: ::core::iter::Iterator {
-                #[inline]
-                fn next_back(&mut self) -> ::core::option::Option<Self::Item>;
-                #try_trait
-            }
-        },
-    )
-    .into()
+    quick_derive! {
+        input,
+        ::core::iter::DoubleEndedIterator,
+        <Item>,
+        trait DoubleEndedIterator: ::core::iter::Iterator {
+            #[inline]
+            fn next_back(&mut self) -> ::core::option::Option<Self::Item>;
+            #try_trait
+        }
+    }
 }
 
 #[proc_macro_derive(ExactSizeIterator)]
