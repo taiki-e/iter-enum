@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [1.1.3] - 2024-01-27
+
 - Update minimum `derive_utils` version to 0.14.1.
 
 ## [1.1.2] - 2024-01-27
@@ -94,7 +96,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/iter-enum/compare/v1.1.2...HEAD
+[Unreleased]: https://github.com/taiki-e/iter-enum/compare/v1.1.3...HEAD
+[1.1.3]: https://github.com/taiki-e/iter-enum/compare/v1.1.2...v1.1.3
 [1.1.2]: https://github.com/taiki-e/iter-enum/compare/v1.1.1...v1.1.2
 [1.1.1]: https://github.com/taiki-e/iter-enum/compare/v1.1.0...v1.1.1
 [1.1.0]: https://github.com/taiki-e/iter-enum/compare/v1.0.2...v1.1.0
