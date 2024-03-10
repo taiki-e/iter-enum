@@ -75,6 +75,7 @@ See [auto_enums] crate for how to automate patterns like this.
     )
 ))]
 #![forbid(unsafe_code)]
+// docs.rs only (cfg is enabled via [package.metadata.docs.rs] in Cargo.toml, not build script)
 #![cfg_attr(iter_enum_doc_cfg, feature(doc_cfg))]
 
 use derive_utils::quick_derive;
