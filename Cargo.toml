@@ -29,7 +29,7 @@ rayon = []
 derive_utils = "0.14.1"
 
 [dev-dependencies]
-macrotest = { git = "https://github.com/taiki-e/macrotest.git", branch = "dev" } # 2021 edition support + syn 2.0 + no cargo-expand + adjust overwrite behavior
+macrotest = { git = "https://github.com/taiki-e/macrotest.git", branch = "dev" } # adjust overwrite behavior + no cargo-expand
 rayon_crate = { package = "rayon", version = "1" }
 rustversion = "1"
 
