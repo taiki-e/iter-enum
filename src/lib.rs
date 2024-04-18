@@ -13,8 +13,6 @@ Add this to your `Cargo.toml`:
 iter-enum = "1"
 ```
 
-*Compiler support: requires rustc 1.56+*
-
 ## Examples
 
 ```rust

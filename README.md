@@ -3,7 +3,7 @@
 [![crates.io](https://img.shields.io/crates/v/iter-enum?style=flat-square&logo=rust)](https://crates.io/crates/iter-enum)
 [![docs.rs](https://img.shields.io/badge/docs.rs-iter--enum-blue?style=flat-square&logo=docs.rs)](https://docs.rs/iter-enum)
 [![license](https://img.shields.io/badge/license-Apache--2.0_OR_MIT-blue?style=flat-square)](#license)
-[![rust version](https://img.shields.io/badge/rustc-1.56+-blue?style=flat-square&logo=rust)](https://www.rust-lang.org)
+[![msrv](https://img.shields.io/badge/msrv-1.56-blue?style=flat-square&logo=rust)](https://www.rust-lang.org)
 [![github actions](https://img.shields.io/github/actions/workflow/status/taiki-e/iter-enum/ci.yml?branch=main&style=flat-square&logo=github)](https://github.com/taiki-e/iter-enum/actions)
 
 <!-- tidy:crate-doc:start -->
@@ -17,8 +17,6 @@ Add this to your `Cargo.toml`:
 [dependencies]
 iter-enum = "1"
 ```
-
-*Compiler support: requires rustc 1.56+*
 
 ## Examples
 
