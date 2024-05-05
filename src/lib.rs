@@ -73,8 +73,8 @@ See [auto_enums] crate for how to automate patterns like this.
     )
 ))]
 #![forbid(unsafe_code)]
-// docs.rs only (cfg is enabled via [package.metadata.docs.rs] in Cargo.toml, not build script)
-#![cfg_attr(iter_enum_doc_cfg, feature(doc_cfg))]
+// docs.rs only (cfg is enabled by docs.rs, not build script)
+#![cfg_attr(docsrs, feature(doc_cfg))]
 
 use derive_utils::quick_derive;
 use proc_macro::TokenStream;
@@ -200,7 +200,7 @@ pub fn derive_extend(input: TokenStream) -> TokenStream {
 }
 
 #[cfg(feature = "rayon")]
-#[cfg_attr(iter_enum_doc_cfg, doc(cfg(feature = "rayon")))]
+#[cfg_attr(docsrs, doc(cfg(feature = "rayon")))]
 #[proc_macro_derive(ParallelIterator)]
 pub fn derive_parallel_iterator(input: TokenStream) -> TokenStream {
     quick_derive! {
@@ -219,7 +219,7 @@ pub fn derive_parallel_iterator(input: TokenStream) -> TokenStream {
 }
 
 #[cfg(feature = "rayon")]
-#[cfg_attr(iter_enum_doc_cfg, doc(cfg(feature = "rayon")))]
+#[cfg_attr(docsrs, doc(cfg(feature = "rayon")))]
 #[proc_macro_derive(IndexedParallelIterator)]
 pub fn derive_indexed_parallel_iterator(input: TokenStream) -> TokenStream {
     quick_derive! {
@@ -242,7 +242,7 @@ pub fn derive_indexed_parallel_iterator(input: TokenStream) -> TokenStream {
 }
 
 #[cfg(feature = "rayon")]
-#[cfg_attr(iter_enum_doc_cfg, doc(cfg(feature = "rayon")))]
+#[cfg_attr(docsrs, doc(cfg(feature = "rayon")))]
 #[proc_macro_derive(ParallelExtend)]
 pub fn derive_parallel_extend(input: TokenStream) -> TokenStream {
     quick_derive! {
