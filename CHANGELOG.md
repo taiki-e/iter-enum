@@ -12,6 +12,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [1.2.0] - 2025-01-16
+
 - Update `derive_utils` to 0.15. This uses `#[automatically_derived]` on generated impls to improve coverage support.
 
 ## [1.1.3] - 2024-01-27
@@ -100,7 +102,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/iter-enum/compare/v1.1.3...HEAD
+[Unreleased]: https://github.com/taiki-e/iter-enum/compare/v1.2.0...HEAD
+[1.2.0]: https://github.com/taiki-e/iter-enum/compare/v1.1.3...v1.2.0
 [1.1.3]: https://github.com/taiki-e/iter-enum/compare/v1.1.2...v1.1.3
 [1.1.2]: https://github.com/taiki-e/iter-enum/compare/v1.1.1...v1.1.2
 [1.1.1]: https://github.com/taiki-e/iter-enum/compare/v1.1.0...v1.1.1
