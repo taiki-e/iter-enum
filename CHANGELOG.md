@@ -12,6 +12,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `derive_utils` to 0.15. This uses `#[automatically_derived]` on generated impls to improve coverage support.
+
 ## [1.1.3] - 2024-01-27
 
 - Update minimum `derive_utils` version to 0.14.1.

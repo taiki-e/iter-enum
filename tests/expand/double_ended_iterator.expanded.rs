@@ -3,6 +3,7 @@ enum Enum<A, B> {
     A(A),
     B(B),
 }
+#[automatically_derived]
 impl<A, B> ::core::iter::DoubleEndedIterator for Enum<A, B>
 where
     A: ::core::iter::DoubleEndedIterator,
