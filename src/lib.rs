@@ -1,7 +1,10 @@
 // SPDX-License-Identifier: Apache-2.0 OR MIT
 
 /*!
-<!-- tidy:crate-doc:start -->
+<!-- Note: Document from sync-markdown-to-rustdoc:start through sync-markdown-to-rustdoc:end
+     is synchronized from README.md. Any changes to that range are not preserved. -->
+<!-- tidy:sync-markdown-to-rustdoc:start -->
+
 \#\[derive(Iterator, DoubleEndedIterator, ExactSizeIterator, FusedIterator, Extend)\] for enums.
 
 ## Usage
@@ -15,7 +18,7 @@ iter-enum = "1"
 
 ## Examples
 
-```rust
+```
 use iter_enum::*;
 
 #[derive(Iterator, DoubleEndedIterator, ExactSizeIterator, FusedIterator, Extend)]
@@ -62,7 +65,7 @@ See [auto_enums] crate for how to automate patterns like this.
 [io-enum]: https://github.com/taiki-e/io-enum
 [proc-macro-derive]: https://doc.rust-lang.org/reference/procedural-macros.html#derive-macros
 
-<!-- tidy:crate-doc:end -->
+<!-- tidy:sync-markdown-to-rustdoc:end -->
 */
 
 #![doc(test(
