@@ -2,7 +2,8 @@
 name = "iter-enum"
 version = "1.2.0" #publish:version
 edition = "2021"
-rust-version = "1.56" # For syn (dep of derive_utils)
+# NB: Sync with msrv badge in README.md
+rust-version = "1.61" # For syn (dep of derive_utils)
 license = "Apache-2.0 OR MIT"
 repository = "https://github.com/taiki-e/iter-enum"
 keywords = ["iterator", "derive", "enum"]
