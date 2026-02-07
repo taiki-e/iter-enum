@@ -22,7 +22,7 @@ iter-enum = "1"
 ## Examples
 
 ```rust
-use iter_enum::*;
+use iter_enum::{Iterator, DoubleEndedIterator, ExactSizeIterator, FusedIterator, Extend};
 
 #[derive(Iterator, DoubleEndedIterator, ExactSizeIterator, FusedIterator, Extend)]
 enum Either<A, B> {
