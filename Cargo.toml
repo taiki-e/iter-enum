@@ -26,7 +26,7 @@ rayon = []
 
 # Note: rayon is public dependency.
 [dependencies]
-derive_utils = "0.15"
+derive_utils = "0.16"
 
 [dev-dependencies]
 macrotest = { git = "https://github.com/taiki-e/macrotest.git", branch = "dev" } # adjust overwrite behavior + no cargo-expand
