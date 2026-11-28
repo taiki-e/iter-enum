@@ -29,9 +29,9 @@ rayon = []
 derive_utils = "0.16"
 
 [dev-dependencies]
+build-context = "0.1"
 macrotest = { git = "https://github.com/taiki-e/macrotest.git", branch = "dev" } # adjust overwrite behavior + no cargo-expand
 rayon_crate = { package = "rayon", version = "1" }
-rustversion = "1"
 
 [lints]
 workspace = true
